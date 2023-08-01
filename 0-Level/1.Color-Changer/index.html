@@ -6,23 +6,29 @@
     <title>1.Color-Changer</title>
     <link rel="stylesheet" href="style.css">
 
+    <!-- JS File -->
+    
+    <script src="./script.js" defer></script>
+
 </head>
-<body class="">
+<body class="bg-white transition-all ease-in duration-200">
+
    <main class="h-full flex flex-col justify-center items-center gap-5" >
-    <div class="flex justify-center gap-5">
-        <div class="w-10 sm:w-20 md:w-36 h-10 sm:h-20 md:h-36 rounded-xl cursor-pointer bg-red-500 border border-b">
+
+    <div data-color-container="Color-Container" class="flex justify-center gap-5">
+        <div class="w-10 sm:w-20 md:w-36 h-10 sm:h-20 md:h-36 rounded-xl cursor-pointer bg-red-500 border border-white transition-all ease-in duration-200">
 
         </div>
-        <div class="w-10 sm:w-20 md:w-36 h-10 sm:h-20 md:h-36 rounded-xl cursor-pointer bg-green-500 border border-b">
+        <div class="w-10 sm:w-20 md:w-36 h-10 sm:h-20 md:h-36 rounded-xl cursor-pointer bg-green-500 border border-white transition-all ease-in duration-200">
 
         </div>
-        <div class="w-10 sm:w-20 md:w-36 h-10 sm:h-20 md:h-36 rounded-xl cursor-pointer bg-sky-500 border border-b">
+        <div class="w-10 sm:w-20 md:w-36 h-10 sm:h-20 md:h-36 rounded-xl cursor-pointer bg-sky-500 border border-white transition-all ease-in duration-200">
 
         </div>
         <div class="w-10 sm:w-20 md:w-36 h-10 sm:h-20 md:h-36 rounded-xl cursor-pointer bg-yellow-500 border border-b">
 
         </div>
-        <div class="w-10 sm:w-20 md:w-36 h-10 sm:h-20 md:h-36 rounded-xl cursor-pointer bg-gray-500 border border-b">
+        <div class="w-10 sm:w-20 md:w-36 h-10 sm:h-20 md:h-36 rounded-xl cursor-pointer bg-gray-500 border border-white transition-all ease-in duration-200">
 
         </div>
     
@@ -35,8 +41,8 @@
         </h1>
     </div>
 
-    <button class="md:px-5 py-5 font-semibold rounded-lg border-4 border-black">
-        rgb(255,255,255)
+    <button class="min-w-[150px] min-h-[5px] md:px-5 md:py-5 font-semibold rounded-lg border-2 border-black">
+        rgb(255, 255, 255)
     </button>
    </main>
 </body>
