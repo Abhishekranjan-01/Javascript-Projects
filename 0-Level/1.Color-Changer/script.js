@@ -1,6 +1,7 @@
 const colors = document.querySelectorAll('[data-color-container] div');
 const body = document.querySelector('body');
 const button = document.querySelector('button');
+const reset = document.querySelector('[data-reset]');
 
 // button.textContent = body.style.background;
 let hexValue = '#ffffff';
@@ -20,7 +21,7 @@ for(let i of colors){
         body.style.backgroundColor = styleObject.backgroundColor;
         button.textContent = styleObject.backgroundColor;
         hexValue = rgb2hex(styleObject.backgroundColor);
-        console.log(hexValue);
+        // console.log(hexValue);
         
     })
 
@@ -34,12 +35,13 @@ button.addEventListener('click',()=>{
     let textContent = button.textContent;
 
     textContent[0] == 'r' ? (button.textContent = hexValue) 
-    : (button.textContent = getComputedStyle(body).backgroundColor);
+    : ((button.textContent = getComputedStyle(body).backgroundColor));
 
-    // console.log(textContent[0],":  ",body.style.backgroundColor);
-    // console.log(body.style.backgroundColor);
-    // console.log(getComputedStyle(body).backgroundColor);
-    
-    console.log(button.textContent[0]);
-    console.log(button.textContent);
+})
+
+//Event On Reset-Button
+reset.addEventListener('click',()=>{
+body.style.backgroundColor = 'rgb(255, 255, 255)';
+
+button.textContent = 'rgb(255, 255, 255)';
 })
