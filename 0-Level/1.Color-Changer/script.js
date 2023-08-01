@@ -6,11 +6,10 @@ const reset = document.querySelector('[data-reset]');
 // button.textContent = body.style.background;
 let hexValue = '#ffffff';
 
-console.log(colors);
 
+// Events On All 5 Color Divs
 for(let i of colors){
-    
-    
+ 
     i.addEventListener('click',(e)=>{
 
     const styleObject=getComputedStyle(i);
@@ -27,7 +26,7 @@ for(let i of colors){
 
 }
 
-// Event On Button
+// Event On Button Rgb/hex Button
 
 button.addEventListener('click',()=>{
 
