@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /*Preventing To Show Arrow Keys On Number Input Type Elements*/
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0; 
+        }
+        /*For Responsiveness*/
+        #about-BMI-range{
+            margin-top: -100px;
+          }
+        @media screen and (max-width:900px) {
+            
+            #about-BMI-range{
+              margin-top: 0;
+            }
+            
+        }
+
+        @media screen and (max-width:620px) {
+            h3{
+                font-size: 16px;
+            }
+        }
+
+    </style>
+
+        <script src="./script.js" defer></script>
+
+</head>
+<body style="background-color: #2b2b2b;">
+    <!-- Heading -->
+    <h1 style="color:#fefefe; text-align: center;">Bmi Calculator</h1>
+    <!-- Form -->
+    <form method="get"  style="display: flex; flex-direction: column; align-items: center; row-gap: 50px; color:#fefefe" data-input="Input Field">
+        <!-- For Height -->
+        <div style="display: flex; flex-direction: column;">
+            <label for="Height" style="font-size: 20px;">Height In CM: </label>
+            <input type="number" name="Height" style="padding: 10px 8px; font-size: 20px;">
+        </div>
+        <!-- For Weight -->
+        <div style="display: flex; flex-direction: column;">
+            <label for="Weight" style="font-size: 20px;">Weight In KG: </label>
+            <input type="number" name="Weight" style="padding: 10px 8px; font-size: 20px;">
+        </div>
+
+        <button type="submit" style="font-size: 25px; font-weight: bold; text-align: center;width:fit-content; padding: 4px 20px;">Calculate</button>
+
+        <div data-result></div>
+    </form>
+    <!-- BMI Indexes -->
+    <div style="display: flex; flex-direction: column; align-items: end; padding: 0 50px; color:#fefefe" id="about-BMI-range">
+        <h2 style="text-align: left; margin-right: 20px;">BMI Weight Guide</h2>
+
+        <h3>Under Weight = Less Than 18.6</h3>
+        <h3>Normal Range = 18.6 and 24.9</h3>
+        <h3>Overweight = Greater Than 24.9</h3>
+    </div>
+   
+    
+</body>
+</html>
