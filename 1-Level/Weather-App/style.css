@@ -526,25 +526,61 @@ video {
   margin-top: 5rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-screen {
   height: 100vh;
 }
 
-.h-full {
-  height: 100%;
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .w-full {
   width: 100%;
 }
 
-.w-fit {
-  width: -moz-fit-content;
-  width: fit-content;
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.w-\[45vw\] {
+  width: 45vw;
+}
+
+.w-\[80vw\] {
+  width: 80vw;
+}
+
+.w-\[85vw\] {
+  width: 85vw;
 }
 
 .flex-col {
@@ -559,39 +595,69 @@ video {
   justify-content: center;
 }
 
-.gap-5 {
-  gap: 1.25rem;
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
 }
 
 .gap-28 {
   gap: 7rem;
 }
 
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+
+.gap-20 {
+  gap: 5rem;
+}
+
+.gap-16 {
+  gap: 4rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
 
-.border-4 {
-  border-width: 4px;
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
-.border-white {
+.border-2 {
+  border-width: 2px;
+}
+
+.border-black {
   --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.bg-orange-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
-}
-
-.bg-\[url\[\'https\:\/\/images\.pexels\.com\/photos\/76969\/cold-front-warm-front-hurricane-felix-76969\.jpeg\?auto\=compress\&cs\=tinysrgb\&w\=1260\&h\=750\&dpr\=1\'\]\] {
-  background-color: url['https://images.pexels.com/photos/76969/cold-front-warm-front-hurricane-felix-76969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'];
-}
-
-.bg-gray-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .bg-gray-900 {
@@ -599,24 +665,9 @@ video {
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/76969\/cold-front-warm-front-hurricane-felix-76969\.jpeg\?auto\=compress\&cs\=tinysrgb\&w\=1260\&h\=750\&dpr\=1\'\)\] {
-  background-image: url('https://images.pexels.com/photos/76969/cold-front-warm-front-hurricane-felix-76969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-}
-
-.bg-\[url\(https\:\/\/images\.pexels\.com\/photos\/76969\/cold-front-warm-front-hurricane-felix-76969\.jpeg\)\] {
-  background-image: url(https://images.pexels.com/photos/76969/cold-front-warm-front-hurricane-felix-76969.jpeg);
-}
-
-.bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/76969\/cold-front-warm-front-hurricane-felix-76969\.jpeg\'\)\] {
-  background-image: url('https://images.pexels.com/photos/76969/cold-front-warm-front-hurricane-felix-76969.jpeg');
-}
-
-.bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/3617500\/pexels-photo-3617500\.jpeg\?auto\=compress\&cs\=tinysrgb\&w\=1260\&h\=750\&dpr\=1\'\)\] {
-  background-image: url('https://images.pexels.com/photos/3617500/pexels-photo-3617500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-}
-
-.bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/2909261\/pexels-photo-2909261\.jpeg\?auto\=compress\&cs\=tinysrgb\&w\=1260\&h\=750\&dpr\=1\'\)\] {
-  background-image: url('https://images.pexels.com/photos/2909261/pexels-photo-2909261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/18111431\/pexels-photo-18111431\/free-photo-of-weather-space-dark-summer\.jpeg\?auto\=compress\&cs\=tinysrgb\&w\=1600\'\)\] {
@@ -625,10 +676,6 @@ video {
 
 .bg-cover {
   background-size: cover;
-}
-
-.bg-contain {
-  background-size: contain;
 }
 
 .bg-clip-text {
@@ -640,14 +687,14 @@ video {
   background-repeat: no-repeat;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .py-2 {
@@ -655,23 +702,64 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {
   text-align: center;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.font-\[\'Montserrat\'\] {
+  font-family: 'Montserrat';
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+.font-\[\'Poppins\'\] {
+  font-family: 'Poppins';
+}
+
+.font-\[\'arial\'\] {
+  font-family: 'arial';
 }
 
 .text-4xl {
@@ -679,17 +767,32 @@ video {
   line-height: 2.5rem;
 }
 
-.font-semibold {
-  font-weight: 600;
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-bold {
   font-weight: 700;
 }
 
-.text-yellow-400 {
-  --tw-text-opacity: 1;
-  color: rgb(250 204 21 / var(--tw-text-opacity));
+.font-semibold {
+  font-weight: 600;
 }
 
 .text-gray-200 {
@@ -697,9 +800,15 @@ video {
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
-.text-orange-900 {
+.text-gray-700 {
   --tw-text-opacity: 1;
-  color: rgb(124 45 18 / var(--tw-text-opacity));
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .outline-none {
@@ -708,15 +817,37 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:mt-20 {
+    margin-top: 5rem;
+  }
+
+  .md\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
   .md\:h-full {
     height: 100%;
+  }
+
+  .md\:w-\[45vw\] {
+    width: 45vw;
+  }
+
+  .md\:gap-5 {
+    gap: 1.25rem;
   }
 
   .md\:bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/76969\/cold-front-warm-front-hurricane-felix-76969\.jpeg\?auto\=compress\&cs\=tinysrgb\&w\=1260\&h\=750\&dpr\=1\'\)\] {
     background-image: url('https://images.pexels.com/photos/76969/cold-front-warm-front-hurricane-felix-76969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
   }
 
-  .md\:bg-cover {
-    background-size: cover;
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
