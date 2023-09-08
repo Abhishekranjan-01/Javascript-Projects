@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- <script src="./script.js" defer></script> -->
+
+
+
+</head>
+<body class="h-screen flex flex-col justify-center items-center gap-5 md:gap-10 
+bg-[url('https://images.pexels.com/photos/3943750/pexels-photo-3943750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]
+
+md:bg-[url('https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-no-repeat bg-cover">
+    
+    <!-- Heading -->
+    <h1 class="text-6xl font-semibold text-gray-200">Currency Converter</h1>
+
+    <div class="w-[75vw] backdrop-blur-sm flex justify-center flex-col gap-10" style="background-color: #e2e2e242;">
+
+        <div class="flex flex-row justify-center gap-20 ">
+            <div class="self-end">
+
+                <h1 class="text-lg font-semibold">Amount</h1>
+
+                <input class="px-4 py-2 rounded-lg w-fit h-fit self-end outline-none" type="number" name="" id="" placeholder="Amount">
+            </div>
+
+            
+            <div id="from-div">
+                <h1 class="text-lg font-semibold">From</h1>
+                <select class="px-5 py-1 rounded-lg outline-none" name="rates" id="from-rates">
+                    <option value="USD">USD</option>
+                </select>
+            </div>
+
+
+            <!-- fpodjp -->
+
+
+            <div id="to-div">
+                <h1 class="text-lg font-semibold">To</h1>
+                <select class="px-5 py-1 rounded-lg outline-none" name="rates" id="to-rates">
+                    <option value="USD">INR</option>
+                </select>
+            </div>
+
+
+        </div>
+        <button class="w-fit self-center py-1 px-5 rounded-lg bg-sky-500 text-lg text-gray-200 font-semibold hover:bg-sky-600 hover:text-gray-50 transition-all duration-200 ease-in-out" type="submit">Convert</button>
+    </div>
+
+
+</body>
+</html>
