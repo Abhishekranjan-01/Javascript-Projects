@@ -20,28 +20,28 @@
     </style>
 
 </head>
-<body class="h-screen w-screen flex flex-col  items-center gap-5 md:gap-20 
+<body class="h-screen w-screen flex flex-col max-md:justify-center items-center gap-4 md:gap-20 
 bg-[url('https://images.pexels.com/photos/3943750/pexels-photo-3943750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]
 
 md:bg-[url('https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-no-repeat bg-cover">
     
     <!-- Heading -->
-    <h1 class="text-4xl md:text-6xl text-center font-semibold text-gray-900">Currency Converter</h1>
+    <h1 class="text-4xl md:text-6xl text-center mt-10 font-bold text-gray-900">Currency Converter</h1>
 
-    <div class="w-11/12 md:w-fit px-5 md:px-10 py-10 backdrop-blur-sm flex justify-center flex-col gap-5 rounded-lg" style="background-color: #e2e2e242;">
+    <div class="w-11/12 md:w-fit px-5 md:px-10 py-10 backdrop-blur-sm flex justify-center flex-col gap-4 md:gap-5 rounded-lg" style="background-color: #e2e2e242;">
 
-        <div class="flex flex-row justify-center gap-10 md:gap-20 ">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 ">
             <!-- Amount -->
-            <div class="self-end">
+            <div class="">
 
-                <h1 class="text-lg font-semibold">Amount</h1>
+                <h1 class="text-lg text-center font-semibold">Amount</h1>
 
                 <input class="px-4 py-2 rounded-lg w-fit h-fit self-end outline-none" type="number" name="" id="" placeholder="Amount">
             </div>
 
             <!-- From -->
             <div id="from-div">
-                <h1 class="text-lg font-semibold">From</h1>
+                <h1 class="text-lg text-center font-semibold">From</h1>
                 <select class="px-5 py-2 rounded-lg outline-none" name="rates" id="from-rates">
                     <option value="USD">USD</option>
                 </select>
@@ -50,28 +50,25 @@ md:bg-[url('https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg?a
 
             <!-- To -->
             <div id="to-div">
-                <h1 class="text-lg font-semibold">To</h1>
+                <h1 class="text-lg text-center font-semibold">To</h1>
                 <select class="px-5 py-2 rounded-lg outline-none" name="rates" id="to-rates">
                     <option value="USD">INR</option>
                 </select>
             </div>
 
-<!-- 465456465 -->
-
 
         </div>
 
-        <!-- 54545445646 -->
+       
+        <!-- result -->
+        <div id="result">
+            <h1 class="text-xl text-center font-bold">100 <span>USD</span><span> =</span></h1>
 
+            <h1 class="text-xl text-center font-bold">88 <span>INR</span><span> </span></h1>
+        </div>
         
-                        <!-- To -->
-                        <div id="to-div">
-                            <h1 class="text-lg font-semibold">100 <span>USD</span><span> =</span></h1>
-
-                            <h1 class="text-lg font-semibold">88 <span>INR</span><span> </span></h1>
-                        </div>
-
         <button class="w-fit self-center py-1 px-5 rounded-lg bg-sky-500 text-lg text-gray-200 font-semibold hover:bg-sky-600 hover:text-gray-50 transition-all duration-200 ease-in-out" type="submit">Convert</button>
+
     </div>
 
 

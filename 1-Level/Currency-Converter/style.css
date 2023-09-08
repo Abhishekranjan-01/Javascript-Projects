@@ -522,6 +522,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -582,6 +586,10 @@ video {
 
 .gap-10 {
   gap: 2.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .self-end {
@@ -662,8 +670,17 @@ video {
   line-height: 2.5rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .font-semibold {
   font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .text-gray-200 {
@@ -711,6 +728,12 @@ video {
   color: rgb(249 250 251 / var(--tw-text-opacity));
 }
 
+@media not all and (min-width: 768px) {
+  .max-md\:justify-center {
+    justify-content: center;
+  }
+}
+
 @media (min-width: 768px) {
   .md\:w-full {
     width: 100%;
@@ -721,8 +744,16 @@ video {
     width: fit-content;
   }
 
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
   .md\:gap-20 {
     gap: 5rem;
+  }
+
+  .md\:gap-5 {
+    gap: 1.25rem;
   }
 
   .md\:bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/6693655\/pexels-photo-6693655\.jpeg\?auto\=compress\&cs\=tinysrgb\&w\=1260\&h\=750\&dpr\=1\'\)\] {
