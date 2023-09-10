@@ -1,69 +1,83 @@
-// const API = fetch(`http://data.fixer.io/api/latest?access_key=04176d61884bb3d89c9d92189ccb638b`);
+const fromOption = document.querySelector('#from-rates option').value.toLowerCase();
 
+console.log(fromOption);
+
+const API = fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${fromOption}.json`);
+// 
 const fromSelect = document.getElementById('from-rates');
-
 const toSelect = document.getElementById('to-rates');
 
+const dateAsPer = document.getElementById('date');
+// const time = document.getElementById('time');
+
+const amount = document.getElementById('amount');
+const swapValues  = document.getElementById('swap-values');
+
+// Handling API Response
 API.then((response)=>{
+    
     return(response.json());
-}).then((data)=>{
-    console.log(data);
+    
+    })
+    .then((data)=>{
+        console.log(data);
+    
+        dateAsPer.textContent = `${data['date']}`;
+
+        console.log(`${data['date']}`);
+
+
+        for(rate of Object.keys(data[`${fromOption}`]))
+        {
+            // From
+            if(rate == 'USD'){
+            // Don't Add In Option list
+            }
+            else{
+                const fromOption = document.createElement('option');
+                fromOption.textContent = `${rate.toUpperCase()}`
+                fromSelect.append(fromOption);  
+            }
+
+            // To
+            if(rate == 'INR'){
+            // Don't Add In Option list
+            }
+            else{
+                const toOption = document.createElement('option');
+                toOption.textContent = `${rate.toUpperCase()}`
+        
+                toSelect.append(toOption);  
+            }
+
+        }
+
+
+    })
+        .catch((error)=>{
+        console.log("Something went wrong");
+        console.log(error);
+        })
+
+
+swapValues.addEventListener(('click'),(e)=>{
+
+    const fromOption = document.querySelector('#from-rates option');
+    const toOption = document.querySelector('#to-rates option');
+    console.log("From Option : ",fromOption);   
+    console.log("To Option : ",toOption);  
     
     
-    for(rate of Object.keys(data['rates']))
-    {
-        // From
-        const fromOption = document.createElement('option');
-        console.log(Object.keys(data['rates']).length);
-        // console.log(rate);
-        if(rate == 'USD'){
-            // Do Nothing
-        }
-        else{
-            option.textContent = `${rate}`
-            select.append(option);  
-        }
-        // To
-        const toOption = document.createElement('option');
-        console.log(Object.keys(data['rates']).length);
-        // console.log(rate);
-        if(rate == 'USD'){
-            // Do Nothing
-        }
-        else{
-            option.textContent = `${rate}`
-            select.append(option);  
-        }
+    let tempString = fromOption.textContent;
+    let tempValue = fromOption.value;
 
 
-    }
-
-    const op1 = document.querySelector('option');
-    console.log(op1.value);
-    // console.log(data['rates']['INR']);
-}).catch((error)=>{
-    console.log("Something went wrong");
-    console.log(error);
-})
-
-/*
-
-const details = fetch(`https://restcountries.com/v3.1/name/india?fields=name,capital,currencies
-`)
-    .then((response)=> response.json())
-        .then((data)=>{
+    fromOption.textContent = toOption.textContent ;
+    toOption.textContent = tempString; 
 
 
-            console.log(data);
-            // if(data.length > 1){
-            //     return(Object.keys(data[0]['currencies'])[0])
-            // }
-            // else{
-            //     return(Object.keys(data['currencies'])[0])
-            // }
-        }).then((exactMatch)=>{console.log(exactMatch);})
-            .catch((error)=>{
-                console.log("Something went wrong");
-            })
-
-            */
+    fromOption.value = toOption.value;
+    toOption.value = tempValue;
+    
+    
+});

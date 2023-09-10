@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currency Converter</title>
+    <title>Currency Converter @</title>
 
     <link rel="stylesheet" href="style.css">
     
@@ -39,7 +39,7 @@ md:bg-[url('https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg?a
 
                 <h1 class="text-lg text-center font-semibold">Amount</h1>
 
-                <input class="px-4 py-2 rounded-lg w-fit h-fit self-end outline-none" type="number" name="" id="" placeholder="Amount">
+                <input class="px-4 py-2 rounded-lg w-fit h-fit outline-none" type="number" name="" id="amount" placeholder="Amount" value="1">
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-10">
@@ -51,7 +51,7 @@ md:bg-[url('https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg?a
                     </select>
                 </div>
 
-                <button class="bg-gray-100 hover:bg-gray-800  hover:text-gray-100 transition-all duration-300 ease-in-out max-sm:rotate-90 self-center md:self-end rounded-full w-12 h-12 flex justify-center items-center">
+                <button class="bg-gray-100 hover:bg-gray-800  hover:text-gray-100 transition-all duration-300 ease-in-out max-sm:rotate-90 self-center md:self-end rounded-full w-12 h-12 flex justify-center items-center" id="swap-values">
                     <i class="fa-solid fa-arrow-right-arrow-left fa-xl"></i>
                 </button>
 
@@ -59,7 +59,7 @@ md:bg-[url('https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg?a
                 <div id="to-div">
                     <h1 class="text-lg text-center font-semibold">To</h1>
                     <select class="px-5 py-2 rounded-lg outline-none" name="rates" id="to-rates">
-                        <option value="USD">INR</option>
+                        <option value="INR">INR</option>
                     </select>
                 </div>
 
@@ -72,15 +72,15 @@ md:bg-[url('https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg?a
 
         <div class="flex max-md:flex-col max-md:items-center max-md:gap-5 justify-between text-xl font-medium">
             <h1>Rates As Per :</h1>
-            <h1 id="data">01/01/2023</h1>
-            <h1 id="time">00:00:00</h1>
+            <h1 id="date">01/01/2023</h1>
+            <!-- <h1 id="time">00:00:00</h1> -->
         </div>
        
         <!-- result -->
         <div id="result">
-            <h1 class="text-xl text-center font-bold">100 <span>USD</span><span> =</span></h1>
+            <h1 class="text-xl text-center font-bold"><span id="Entered-Amount"></span> <span id="From-crr">USD</span><span> =</span></h1>
 
-            <h1 class="text-xl text-center font-bold">88 <span>INR</span><span> </span></h1>
+            <h1 class="text-xl text-center font-bold"><span id="Converted Amount"></span> <span id="To-crr">INR</span><span> </span></h1>
         </div>
         
         <button class="w-fit self-center py-1 px-5 rounded-lg bg-sky-500 text-lg text-gray-200 font-semibold hover:bg-sky-600 hover:text-gray-50 transition-all duration-200 ease-in-out" type="submit">Convert</button>
