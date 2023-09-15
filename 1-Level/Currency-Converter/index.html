@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
-<body class="h-screen w-screen flex flex-col max-md:justify-center items-center gap-4 md:gap-20 
+<body class="flex flex-col max-md:justify-center items-center gap-4 md:gap-20 
 bg-[url('https://images.pexels.com/photos/3943750/pexels-photo-3943750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]
 
 md:bg-[url('https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-no-repeat bg-cover">
@@ -31,61 +31,62 @@ md:bg-[url('https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg?a
     <!-- Heading -->
     <h1 class="text-4xl md:text-6xl text-center mt-10 font-bold text-gray-900">Currency Converter</h1>
 
-    <div class="w-11/12 md:w-fit px-5 md:px-10 py-10 backdrop-blur-sm flex justify-center flex-col gap-4 md:gap-5 rounded-lg" style="background-color: #e2e2e242;">
 
-        <div class="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 ">
+        <form class="flex flex-col justify-center items-center gap-10 py-5 h-full rounded-md backdrop-blur-sm" style="background-color: #e2e2e242;">
             <!-- Amount -->
-            <div class="">
 
-                <h1 class="text-lg text-center font-semibold">Amount</h1>
+            <div class="flex flex-col md:flex-row justify-between gap-10 px-5">
+                <!-- Amount -->
+                <div class="">
 
-                <input class="px-4 py-2 rounded-lg w-fit h-fit outline-none" type="number" name="" id="amount" placeholder="Amount" value="1">
-            </div>
-
-            <div class="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-10">
-                <!-- From -->
-                <div id="from-div">
-                    <h1 class="text-lg text-center font-semibold">From</h1>
-                    <select class="px-5 py-2 rounded-lg outline-none" name="rates" id="from-rates">
-                        <option value="USD">USD</option>
-                    </select>
+                    <h1 class="text-lg text-center font-semibold">Amount</h1>
+    
+                    <input class="px-4 py-2 rounded-lg w-fit h-fit outline-none" type="number" name="amount" id="amount" placeholder="Amount" value="1">
                 </div>
 
-                <button class="bg-gray-100 hover:bg-gray-800  hover:text-gray-100 transition-all duration-300 ease-in-out max-sm:rotate-90 self-center md:self-end rounded-full w-12 h-12 flex justify-center items-center" id="swap-values">
-                    <i class="fa-solid fa-arrow-right-arrow-left fa-xl"></i>
-                </button>
-
-                <!-- To -->
-                <div id="to-div">
-                    <h1 class="text-lg text-center font-semibold">To</h1>
-                    <select class="px-5 py-2 rounded-lg outline-none" name="rates" id="to-rates">
-                        <option value="INR">INR</option>
-                    </select>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-10">
+                    <!-- From -->
+                    <div id="from-div">
+                        <h1 class="text-lg text-center font-semibold">From</h1>
+                        <select class="px-5 py-2 rounded-lg outline-none" name="from-rates" id="from-rates">
+                            <option value="USD">USD</option>
+                        </select>
+                    </div>
+    
+                    <button class="bg-gray-100 hover:bg-gray-800  hover:text-gray-100 transition-all duration-300 ease-in-out max-sm:rotate-90 self-center md:self-end rounded-full w-12 h-12 flex justify-center items-center" id="swap-values" type="submit">
+                        <i class="fa-solid fa-arrow-right-arrow-left fa-xl"></i>
+                    </button>
+    
+                    <!-- To -->
+                    <div id="to-div">
+                        <h1 class="text-lg text-center font-semibold">To</h1>
+                        <select class="px-5 py-2 rounded-lg outline-none" name="to-rates" id="to-rates">
+                            <option value="INR">INR</option>
+                        </select>
+                    </div>
+    
                 </div>
+            </div>            
 
-            </div>
-
-            
-
-        </div>
+        
         <!-- Timing Record -->
 
-        <div class="flex max-md:flex-col max-md:items-center max-md:gap-5 justify-between text-xl font-medium">
-            <h1>Rates As Per :</h1>
+        <div class="w-full px-5 flex max-md:flex-col max-md:items-center max-md:gap-5 justify-between text-xl font-medium">
+            <h1>Rates As Of :</h1>
             <h1 id="date">01/01/2023</h1>
             <!-- <h1 id="time">00:00:00</h1> -->
         </div>
        
         <!-- result -->
         <div id="result">
-            <h1 class="text-xl text-center font-bold"><span id="Entered-Amount"></span> <span id="From-crr">USD</span><span> =</span></h1>
+            <h1 class="text-xl text-center font-bold"><span id="Entered-Amount"></span>  <span id="from-amount-crr"></span> <span id="From-crr">USD </span><span> =</span></h1>
 
-            <h1 class="text-xl text-center font-bold"><span id="Converted Amount"></span> <span id="To-crr">INR</span><span> </span></h1>
+            <h1 class="text-xl text-center font-bold"><span id="Converted Amount"></span> <span id="to-amount-crr"> </span> <span id="To-crr">INR</span><span> </span></h1>
         </div>
         
         <button class="w-fit self-center py-1 px-5 rounded-lg bg-sky-500 text-lg text-gray-200 font-semibold hover:bg-sky-600 hover:text-gray-50 transition-all duration-200 ease-in-out" type="submit">Convert</button>
 
-    </div>
+    </form >
 
 
 </body>

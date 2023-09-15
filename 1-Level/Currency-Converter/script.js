@@ -1,25 +1,28 @@
+// From Currency Which wll be Convered to Another Currency
 const fromOption = document.querySelector('#from-rates option').value.toLowerCase();
 
-console.log(fromOption);
+// Form Selector
+const form = document.querySelector('form');
 
-
-// 
+// Select Element Of 'From'
 const fromSelect = document.getElementById('from-rates');
+// Select Element Of 'To
 const toSelect = document.getElementById('to-rates');
 
+// Show Last Updated Currency Date
 const dateAsPer = document.getElementById('date');
 // const time = document.getElementById('time');
 
+// Amount Input Element
 const amount = document.getElementById('amount');
+
+// Swap Values Between Options 
 const swapValues  = document.getElementById('swap-values');
 
+// Show Exchange rates Of Selected Currency
 const convertButton = document.querySelector('button[type = submit]');
 
-
-// console.log(convertButton);
-
-// Handling API Response
-
+// Handling API Response:- 'By Default It Will Fetch For (usd) & Api Response Show For inr'
 
 const API = fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${fromOption}.json`);
 
@@ -31,14 +34,13 @@ API.then((response)=>{
     
     })
     .then((data)=>{
-        console.log(data);
+        // console.log(data);
     
         dateAsPer.textContent = `${data['date']}`;
 
+        // console.log(`${data['date']}`);
 
-        console.log(`${data['date']}`);
-
-
+        // Adding Currencies option Dynamically In (From) And (To) 'Select' Element By Appending The 'select' Element and adding 'option Element'
         for(rate of Object.keys(data[`${fromOption}`]))
         {
             // From
@@ -65,27 +67,11 @@ API.then((response)=>{
 
         }
 
-        // Updating Values
-        // const fromOption = document.querySelector('#from-rates option').value.toLowerCase();
-        //  fromCrr.textContent = `${fromOption.value.toUpperCase()}`;
-        //  console.log(fromCrr);
-
     })
         .catch((error)=>{
         console.log("Something went wrong");
         console.log(error);
-        })
-
-
-
-
-
-
-
-
-
-
-
+})
 
 
 // Event Listner On Swap-Value Button
@@ -93,65 +79,58 @@ swapValues.addEventListener(('click'),(e)=>{
 
     e.preventDefault();
 
+    // Getting All The Currencies from 'From' In Array
+    const fromOption = document.querySelectorAll('#from-rates option');
+    // Getting All The Currencies from 'To' In Array
+    const toOption = document.querySelectorAll('#to-rates option');
 
-    const fromOption = document.querySelector('#from-rates option');
-    const toOption = document.querySelector('#to-rates option');
-    // console.log("From Option : ",fromOption);   
-    // console.log("To Option : ",toOption);  
-    
-    const form = document.querySelector("form");
-
-    const formData = new FormData(form,convertButton);
-
+    // Getting Values Entered In Form
+    const formData = new FormData(form,swapValues);
 
     // console.log(formData.entries());
 
     const formEnteries = [];
 
+    // Inserting The Form Enteries In 'formEnteries'
     for(let data of formData.entries()){
         // console.log(data);
         formEnteries.push(data);
     }
-    console.log(formEnteries);
+    // console.log(formEnteries);
     
+    // Swapping The Values from 'To' To 'From'
+    for(let option of fromOption){
+        if(option.value === formEnteries[1][1])
+        {
+            option.value = formEnteries[2][1];
+            option.textContent = formEnteries[2][1];
+            console.log(option);
+        }
+  
+    }
 
-    fromOption.value = formEnteries[1][1];
-    fromOption.textContent = formEnteries[1][1];
-    
-    toOption.value = formEnteries[2][1]; 
-    toOption.textContent = formEnteries[2][1]; 
+    // Swapping The Values from 'From' To  'To'
+    for(let option of toOption){
+        if(option.value === formEnteries[2][1])
+        {
+            option.value = formEnteries[1][1];
+            option.textContent = formEnteries[1][1];
+            console.log(option);
+        }
+  
+    }
 
-    console.log(fromOption);
-    console.log(toOption);
-    // fromOption.value = toOption.value;
-    // toOption.value = tempValue;
-    
     
 });
 
 
-convertButton.addEventListener(('click'),(e)=>{
-     e.preventDefault();
+// Convert Button To Know Exchange Rates
+form.addEventListener(('click'),(e)=>{
+     
+    e.preventDefault();
     
-
-
-    const fromOption = document.querySelector('#from-rates option').value.toLowerCase();
-    const toOption = document.querySelector('#to-rates option').value.toLowerCase();
-
-    const fromCrr = document.getElementById('From-crr');
-
-
-    // ------------------------------------------------------------
-
-
-    console.log("Form Data \n\n");
-
-
-    const form = document.querySelector("form");
-
+    //Getting Form Data Of Selected Currencies On HTML Page
     const formData = new FormData(form,convertButton);
-
-
     // console.log(formData.entries());
 
     const formEnteries = [];
@@ -162,6 +141,8 @@ convertButton.addEventListener(('click'),(e)=>{
     }
     console.log(formEnteries[1][1].toLowerCase());
 //------------------------------------------------------
+
+// Fetching The Selected Currency Values
     const API2 = fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${formEnteries[1][1].toLowerCase()}.json`);
 
 
@@ -174,38 +155,46 @@ API2.then((response)=>{
     
     })
     .then((data)=>{
-        console.log(data);
+        // console.log(data);
         responseObject = data;
         // console.log(responseObject);
+
+        // Setting The Values Returned By Response from API
         dateAsPer.textContent = `${data['date']}`;
 
-        console.log(`${data['date']}`);
+        // console.log(`${data['date']}`);
+        // From Amount
+        const fromAmountCrr = document.querySelector('#from-amount-crr');
+        // Input Amont Element
+        const amount = document.querySelector('#amount');
 
-        const fromOptionKeys = document.querySelector('#from-rates option').value.toLowerCase();
-       
+        fromAmountCrr.textContent = `${amount.value}`
+        // To Amount 
+        const toAmountCrr = document.querySelector('#to-amount-crr');
+        // console.log(toAmountCrr);
+        
+        // console.log(responseObject);
 
+        // console.log(formEnteries);
+        // console.log(formEnteries[2][1].toLowerCase());
 
+        toAmountCrr.textContent = `${responseObject[formEnteries[1][1].toLowerCase()][formEnteries[2][1].toLowerCase()] * amount.value} `;
+        
     })
         .catch((error)=>{
         console.log("Something went wrong");
         console.log(error);
         })
 
+        // Updating Output Currency Name (Mentioned In Black Color On HTML Page)
 
-
-    
-        // Updating Values
-        const fromOption2 = document.querySelector('#from-rates option').value.toLowerCase();
         const fromCrr2 = document.getElementById('From-crr');
         const toCrr2 = document.getElementById('To-crr');
+
        fromCrr2.textContent = `${formEnteries[1][1].toUpperCase()}`;
        toCrr2.textContent = `${formEnteries[2][1].toUpperCase()}`; 
-    //    console.log(fromCrr2);
-        // console.log(fromOption2.toUpperCase());
-        
-
-        setTimeout(()=>{
-            console.log("\nResponse Object Copy:-\t",responseObject);
-        },100)
+        // setTimeout(()=>{
+        //     console.log("\nResponse Object Copy:-\t",responseObject);
+        // },100)
     })
         
