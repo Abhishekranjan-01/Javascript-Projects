@@ -6,49 +6,59 @@
     <title>News Of The Week</title>
     <link rel="stylesheet" href="./style.css">
 
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="httpw-2/5is.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
     <script src="./script.js" defer></script>
 
 </head>
-<body class=" flex flex-col justify-center items-center">
+<body class="">
     
-    <nav class="flex justify-between w-full my-4 px-4">
-        <ul class="flex gap-4 font-semibold">
-            <li >GetNews</li>
-            <li >Home</li>
-            <li >Sports</li>
-            <li >Weather</li>
+    <nav class="flex justify-between w-full py-2 items-center px-4 bg-gray-900 fixed z-10 top-0">
+        <ul class="flex gap-4 font-semibold text-yellow-200">
+            <li ><a href="#">GetNews</a></li>
+            <li ><a href="#">Home</a></li>
+            <li ><a href="#">Sports</a></li>
+            <li ><a href="#">Weather</a></li>
         </ul>
 
         <div class="flex gap-2">
-            <input class="border-gray-700 border-2 rounded-md px-2 py-1" type="text" name="" id="" value="jsdkjfls">
+            <input class="border-gray-700 border-2 rounded-md px-2 py-1" type="text" name="" id=""  placeholder="Search News">
 
-            <button class="bg-sky-400 rounded-md text-lg font-semibold px-2 text-gray-200 w-full" placeholder="">Search</button>
+            <button class="bg-sky-400 rounded-md text-lg font-semibold px-2 text-gray-200 w-full" >Search</button>
         </div>
     </nav>
 
-    <main class="py-4 md:w-[75vw]">
+    <main class="py-4 w-full mt-20 flex justify-center gap-10 flex-wrap" id="main">
 
-        <section class="bg-gray-200 flex flex-col justify-center items-center gap-5 rounded-xl py-4" >
+        <section class="bg-gray-200 flex flex-col justify-center items-center gap-5 rounded-xl py-4 md:w-2/5 h-fit" id="article-section">
 
       
-                <h1 class="w-3/4 text-2xl my-2 relative right-4 font-semibold" id="title">Putin touts ‘good neighborly relations’ with North Korea after Kim visits Russian fighter jet plant - CNN</h1>
+                <h1 class="text-xl px-2 my-2 relative self-start w-full font-semibold font-['Poppins']" id="title"></h1>
                 
-                <div>
-                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/230914101732-putin-kim-russia-tour-0913.jpg?c=16x9&q=w_800,c_fill" alt="Image" id="news-image">
+                <div class="px-2 w-full">
+                    <img class="rounded-xl" src="" alt="Image Not Available Currently" id="news-image">
 
-                    <div class="flex justify-between">
+                    <div class="flex justify-between text-sm font-['Montserrat']">
                         <h2>Source: <span id="source">CNN</span></h2>
-                        <h2>Published At: <span id="date-time"></span></h2>
+                        <h2>Published On: <span id="date-time"></span></h2>
                     </div>
 
                 </div>
                 
-                <article class="md:w-[77%] relative right-4 text-xl leading-tight text-justify">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit inventore, sit obcaecati aliquid architecto quae neque perspiciatis? Placeat perspiciatis, et officiis maxime consectetur harum dolores explicabo aspernatur est rerum voluptatem voluptates fugiat eos omnis nulla iste quaerat! Sed dolor delectus est modi nemo. Suscipit ex, blanditiis, odit asperiores ab sunt iusto voluptatibus aut itaque quidem veritatis? Dignissimos repellat labore ratione, natus totam asperiores dicta doloribus, eos, fugit laboriosam quod neque. Odio nostrum illo delectus debitis. Quam molestias debitis, consequuntur suscipit rerum mollitia vitae esse, autem, quibusdam culpa asperiores facere recusandae accusantium ipsum quas! Vero veniam eos facilis eligendi voluptatum architecto.
+                <article class="px-2 text-md leading-tight font-['Poppins']" id="article-content">
+                    
                 </article>
-            <h2 class="self-center">Soucre Link: <span id="source-link"><a href="https://www.cnn.com/2023/09/15/asia/kim-jong-un-north-korea-russia-komsomolsk-intl-hnk/index.html">Clik Me</a></span></h2>
+            <h2 class="self-center"><span id="source-link"><a href="https://www.cnn.com/2023/09/15/asia/kim-jong-un-north-korea-russia-komsomolsk-intl-hnk/index.html" class="bg-sky-600 hover:bg-sky-700 hover:text-gray-50 duration-200 ease-in-out px-2 font-semibold text-gray-200 py-1 rounded-md">Know More</a></span></h2>
         </section>
-    </main>
+
+
+    
+</main>
 
 </body>
 </html>
