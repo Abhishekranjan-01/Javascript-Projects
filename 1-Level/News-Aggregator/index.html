@@ -18,34 +18,43 @@
 </head>
 <body class="">
     
-    <nav class="flex justify-between w-full py-2 items-center px-4 bg-gray-900 fixed z-10 top-0">
+    <nav class="flex justify-between w-full py-2 items-center px-4 bg-gray-900 fixed z-10 top-0" id = 'nav-bar'>
         <ul class="flex gap-4 font-semibold text-yellow-200">
-            <li ><a href="#">GetNews</a></li>
-            <li ><a href="#">Home</a></li>
-            <li ><a href="#">Sports</a></li>
-            <li ><a href="#">Weather</a></li>
+            <li ><a href="#" onclick="callApi('world news')">GetNews</a></li>
+            <li ><a href="#nav-bar">Home</a></li>
+            <li ><a href="#" onclick="callApi('sports')">Sports</a></li>
+            <li ><a href="#" onclick="callApi('weather')">Weather</a></li>
+            <li >
+                <select class="bg-gray-900 text-gray-200"  name="continent" id="continent">
+                    <option value="Asia" onclick="callApi('Asia')">Asia</option>
+                    <option value="Americas" onclick="callApi('Americas')">Americas</option>
+                    <option value="Africa" onclick="callApi('Africa')">Africa</option>
+                    <option value="Australia" onclick="callApi('Australia')">Australia</option>
+                    <option value="Europe" onclick="callApi('Europe')">Europe</option>
+                </select>
+            </li>
         </ul>
 
         <div class="flex gap-2">
             <input class="border-gray-700 border-2 rounded-md px-2 py-1" type="text" name="" id=""  placeholder="Search News">
 
-            <button class="bg-sky-400 rounded-md text-lg font-semibold px-2 text-gray-200 w-full" >Search</button>
+            <button class="bg-sky-400 rounded-md text-lg font-semibold px-2 text-gray-200 w-full" type="search">Search</button>
         </div>
     </nav>
 
     <main class="py-4 w-full mt-20 flex justify-center gap-10 flex-wrap" id="main">
 
-        <section class="bg-gray-200 flex flex-col justify-center items-center gap-5 rounded-xl py-4 md:w-2/5 h-fit" id="article-section">
+        <section class="bg-gray-200  flex-col justify-center items-center gap-5 rounded-xl py-4 md:w-2/5 h-fit hidden" id="article-section">
 
       
                 <h1 class="text-xl px-2 my-2 relative self-start w-full font-semibold font-['Poppins']" id="title"></h1>
                 
-                <div class="px-2 w-full">
+                <div class="px-2 w-fit">
                     <img class="rounded-xl" src="" alt="Image Not Available Currently" id="news-image">
 
                     <div class="flex justify-between text-sm font-['Montserrat']">
-                        <h2>Source: <span id="source">CNN</span></h2>
-                        <h2>Published On: <span id="date-time"></span></h2>
+                        <h2>Source: <span id="source"></span> </h2>
+                        <h2>Published On: <span id="date-time"> </span> </h2>
                     </div>
 
                 </div>
