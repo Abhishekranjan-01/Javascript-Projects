@@ -62,16 +62,16 @@ function callApi(topic='technology'){
         // console.log(section);
 
         index++;
-        // console.log(new Date(articlex['publishedAt']).toLocaleString());
-        // if(index>200)
+
       }
   })
 
 
 }
-callApi('asia');
 
+callApi('asia');
 // Fetching News For Specefic Continent
+
 continent.addEventListener("change",()=>{
   callApi(continent.value);
 })
