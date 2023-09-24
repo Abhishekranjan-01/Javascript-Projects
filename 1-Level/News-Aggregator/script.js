@@ -8,13 +8,15 @@ const newsSource = document.getElementById('source');
 const publishedAt = document.getElementById('date-time');
 const newsArticle = document.getElementById('article-content');
 
-const searchNews = document.querySelector('input');
+
 const searchButton = document.querySelector('[type=search]');
+const searchNews = document.querySelector('[placeholder=Search-News]');
 
 searchButton.addEventListener('click',(e)=>{
-  const topic = searchNews.value;
 
+  const topic = searchNews.value;
   callApi(topic);
+
 })
 
 const val =`https://newsapi.org/v2/everything?q=Apple&apiKey=bc0d1a8f943b4b0ca04fc8c1e590f0bc`;
