@@ -12,10 +12,31 @@ const newsArticle = document.getElementById('article-content');
 const searchButton = document.querySelector('[type=search]');
 const searchNews = document.querySelector('[placeholder=Search-News]');
 
+
+// Search Button
 searchButton.addEventListener('click',(e)=>{
 
   const topic = searchNews.value;
   callApi(topic);
+
+   // For Maintaining Dark Mode If Body Contains
+setTimeout(()=>{
+
+  const body = document.body;
+
+  if(body.classList.contains('darkColor')){
+    console.log(body.classList.contains('darkColor'));
+    const articleSections = document.querySelectorAll('section');
+
+    for(let article of articleSections ){
+      console.log(article);
+      article.classList.add('darkSection','softWhite');
+      // article.classList.remove('bg-gray-200');
+    }
+  }
+
+},1000);
+
 
 })
 
@@ -39,7 +60,7 @@ function callApi(topic='technology'){
 
         const section = document.createElement('section');
 
-        section.classList.add('bg-gray-200','flex','flex-col','justify-center','items-center','gap-5', 'rounded-xl','py-4','md:w-2/5','h-fit');
+        section.classList.add('bg-gray-200','flex','flex-col','justify-center','items-center','gap-5', 'rounded-xl','py-4','md:w-2/5','justify-between');
 
         section.innerHTML= `                <h1 class="text-xl px-2 my-2 relative self-start w-full font-semibold font-['Poppins']" id="title">${articlex['title']}</h1>
             
@@ -72,8 +93,29 @@ function callApi(topic='technology'){
 }
 
 callApi('asia');
-// Fetching News For Specefic Continent
 
+
+// Fetching News For Specefic Continent
 continent.addEventListener("change",()=>{
   callApi(continent.value);
-})
+
+  // For Maintaining Dark Mode If Body Contains
+  setTimeout(()=>{
+
+    const body = document.body;
+  // For Maintaining Dark Mode If Body Contains
+    if(body.classList.contains('darkColor')){
+      console.log(body.classList.contains('darkColor'));
+      const articleSections = document.querySelectorAll('section');
+  
+      for(let article of articleSections ){
+        console.log(article);
+        article.classList.add('darkSection','softWhite');
+        // article.classList.remove('bg-gray-200');
+      }
+    }
+  
+  },1000);
+  
+});
+s

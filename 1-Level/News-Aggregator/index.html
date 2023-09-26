@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
-    <!-- For Scripting -->
+    <!-- For Scripting -->s
     <script src="./script.js" defer></script>
     <!-- For Dark Mode -->
     <script src="./darkMode.js" defer></script>
@@ -25,7 +25,7 @@
     <script src="./hamburgerMenu.js" defer></script>
 
 </head>
-<body >
+<body id = 'nav-bar'>
     
     <nav class="flex justify-between max-md:justify-between w-full py-2 items-center px-4 bg-gray-900  fixed z-10 top-0 " id = 'nav-bar' style="box-shadow: 0px -5px 40px 5px  black;">
         <!-- Hamburger Button -->
@@ -37,17 +37,17 @@
 
         <ul class=" bg-gray-900 flex gap-4 font-semibold text-yellow-200 absolute max-md:top-0 left-0 max-md:h-screen max-md:justify-evenly max-md:items-center  max-md:flex-col max-md:px-5 max-md:w-[40vw] md:static transition-all duration-500  ease-in-out max-md:-translate-x-full" id="hamburger-menu">
 
-            <li ><a href="#" onclick="callApi('world news')">GetNews</a></li>
+            <li ><a href="#" onclick="callApi('world news'); darkModeStatus();">GetNews</a></li>
             <li ><a href="#nav-bar">Home</a></li>
-            <li ><a href="#" onclick="callApi('sports')">Sports</a></li>
-            <li ><a href="#" onclick="callApi('weather')">Weather</a></li>
+            <li ><a href="#" onclick="callApi('sports'); darkModeStatus();">Sports</a></li>
+            <li ><a href="#" onclick="callApi('weather'); darkModeStatus();">Weather</a></li>
             <li >
                 <select class="bg-gray-900 text-gray-200"  name="continent" id="continent">
-                    <option value="Asia" onclick="callApi('Asia')">Asia</option>
-                    <option value="Americas" onclick="callApi('Americas')">Americas</option>
-                    <option value="Africa" onclick="callApi('Africa')">Africa</option>
-                    <option value="Australia" onclick="callApi('Australia')">Australia</option>
-                    <option value="Europe" onclick="callApi('Europe')">Europe</option>
+                    <option value="Asia" onclick="callApi('Asia'); darkModeStatus();">Asia</option>
+                    <option value="Americas" onclick="callApi('Americas'); darkModeStatus();">Americas</option>
+                    <option value="Africa" onclick="callApi('Africa'); darkModeStatus();">Africa</option>
+                    <option value="Australia" onclick="callApi('Australia'); darkModeStatus();">Australia</option>
+                    <option value="Europe" onclick="callApi('Europe'); darkModeStatus()">Europe</option>
                 </select>
             </li>
         </ul>
@@ -64,7 +64,7 @@
 
     <main class="py-4 w-full mt-20 flex justify-center gap-10 flex-wrap max-md:px-5" id="main">
 
-        <section class="bg-gray-200 flex-col justify-center items-center gap-5 rounded-xl py-4 md:w-2/5 h-fit hidden" id="article-section ">
+        <section class="bg-gray-200 flex-col justify-between items-center gap-5 rounded-xl py-4 md:w-2/5 hidden" id="article-section ">
 
       
                 <h1 class="text-xl px-2 my-2 relative self-start w-full font-semibold font-['Poppins']" id="title"></h1>
