@@ -1,6 +1,5 @@
 const darkModeButton = document.getElementById('dark-mode');
 
-
 darkModeButton.addEventListener("click",()=>{
 
     const body = document.body;
@@ -55,4 +54,3 @@ setTimeout(()=>{
   },1000);
   
 }
-

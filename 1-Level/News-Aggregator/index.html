@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./dark-mode.css">
 
     <link rel="stylesheet" href="./HamburgerMenu.css">
+
+    <link rel="stylesheet" href="./loading-spiner.css">
+
+    <!-- Animation CDN for Loading Article With Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Google Fonts -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,71 +22,80 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
-    <!-- For Scripting -->s
+    <!-- For Scripting -->
     <script src="./script.js" defer></script>
     <!-- For Dark Mode -->
-    <script src="./darkMode.js" defer></script>
+ 
+    <script src="./darkMode.js" defer ></script>
     <!-- For SideBar On Small Screen -->
     <script src="./hamburgerMenu.js" defer></script>
-
-</head>
-<body id = 'nav-bar'>
+    <!-- Articl Will Load After Appropriate Scroll -->
+    <script src="./loadOnScroll.js" defer></script>
     
-    <nav class="flex justify-between max-md:justify-between w-full py-2 items-center px-4 bg-gray-900  fixed z-10 top-0 " id = 'nav-bar' style="box-shadow: 0px -5px 40px 5px  black;">
+</head>
+<body id = 'top'>
+    
+    <!-- Navigation bar -->
+    <nav class="flex justify-between max-md:justify-between w-full py-2 items-center px-4 bg-gray-900  fixed z-10 top-0 " id = 'nav-bar' style="box-shadow: 0px -5px 40px 5px black;">
         <!-- Hamburger Button -->
         <div  data-hamButton = 'hamburger Button' class="z-10 self-center block md:hidden -ml-5">
-
             <input  type="checkbox" role="button" aria-label="Display the menu" class="menu ">
-        
         </div>
 
+        <!-- Nav Links And Option List -->
         <ul class=" bg-gray-900 flex gap-4 font-semibold text-yellow-200 absolute max-md:top-0 left-0 max-md:h-screen max-md:justify-evenly max-md:items-center  max-md:flex-col max-md:px-5 max-md:w-[40vw] md:static transition-all duration-500  ease-in-out max-md:-translate-x-full" id="hamburger-menu">
 
-            <li ><a href="#" onclick="callApi('world news'); darkModeStatus();">GetNews</a></li>
-            <li ><a href="#nav-bar">Home</a></li>
-            <li ><a href="#" onclick="callApi('sports'); darkModeStatus();">Sports</a></li>
-            <li ><a href="#" onclick="callApi('weather'); darkModeStatus();">Weather</a></li>
+            <li ><a href="#top" onclick="resetCounter(); callApi('world news'); darkModeStatus();">GetNews</a></li>
+            <li ><a href="#top">Home</a></li>
+            <li ><a href="#top" onclick="resetCounter(); callApi('sports'); darkModeStatus();">Sports</a></li>
+            <li ><a href="#top" onclick="resetCounter(); callApi('weather'); darkModeStatus(); ">Weather</a></li>
             <li >
-                <select class="bg-gray-900 text-gray-200"  name="continent" id="continent">
-                    <option value="Asia" onclick="callApi('Asia'); darkModeStatus();">Asia</option>
-                    <option value="Americas" onclick="callApi('Americas'); darkModeStatus();">Americas</option>
-                    <option value="Africa" onclick="callApi('Africa'); darkModeStatus();">Africa</option>
-                    <option value="Australia" onclick="callApi('Australia'); darkModeStatus();">Australia</option>
-                    <option value="Europe" onclick="callApi('Europe'); darkModeStatus()">Europe</option>
+                <select class="bg-gray-900 text-gray-200"  name="continent" id="continent" href="#top">
+                    <option value="Asia" onclick="resetCounter();callApi('Asia'); darkModeStatus();"href="#top">Asia</option>
+                    <option value="Americas" onclick=" resetCounter();callApi('Americas'); darkModeStatus();" href="#top">Americas</option>
+                    <option value="Africa" onclick=" resetCounter();callApi('Africa'); darkModeStatus();" href="#top">Africa</option>
+                    <option value="Australia" onclick="resetCounter();callApi('Australia'); darkModeStatus(); " href="#top">Australia</option>
+                    <option value="Europe" onclick=" resetCounter();callApi('Europe'); darkModeStatus(); " href="#top">Europe</option>
                 </select>
             </li>
         </ul>
-
+        <!-- Dark Mode Button And Search Bar -->
         <div class="flex max-sm:justify-end gap-2 items-center z-20 ">
-    
+            <!-- Dark Mode Button -->
             <i class="fa-solid fa-sun fa-xl text-yellow-400 items-center cursor-pointer transition-all duration-200 ease-in-out" id="dark-mode"></i>
-
+            <!-- Search Bar -->
             <input class="border-gray-700 border-2 rounded-md px-2 md:py-1 max-md:w-1/2" type="text" name="" id="" placeholder="Search-News">
 
-            <button class="bg-sky-400 rounded-md text-sm md:text-lg max-md:w-1/4  font-semibold md:px-2 text-gray-200 w-full" type="search">Search</button>
+            <button class="bg-sky-400 rounded-md text-sm md:text-lg max-md:w-1/4  font-semibold md:px-2 text-gray-200 w-full" type="search" href="#top"onclick="resetCounter(); darkModeStatus();">Search</button>
         </div>
     </nav>
 
+    <!-- Loading Spinner -->
+    <div class="lds-dual-ring " id="spinner" style="margin: 300px auto; "></div>
+
     <main class="py-4 w-full mt-20 flex justify-center gap-10 flex-wrap max-md:px-5" id="main">
-
-        <section class="bg-gray-200 flex-col justify-between items-center gap-5 rounded-xl py-4 md:w-2/5 hidden" id="article-section ">
-
-      
+        <!-- Article Section Filled By Javascript -->
+        <section class="bg-gray-200 flex-col justify-between items-center gap-5 rounded-xl py-4 md:w-2/5 duration-200 delay-200 hidden" id="article-section">
+     
+            <!-- Title -->
                 <h1 class="text-xl px-2 my-2 relative self-start w-full font-semibold font-['Poppins']" id="title"></h1>
-                
+                <!-- News Image -->
                 <div class="px-2 w-fit">
                     <img class="rounded-xl" src="" alt="Image Not Available Currently" id="news-image">
-
-                    <div class="flex justify-between text-sm font-['Montserrat']">
+                    <!-- Source And Published Timing -->
+                    <div class="flex justify-between gap-5 max-sm:text-xs sm:text-sm font-['Montserrat']">
                         <h2>Source: <span id="source"></span> </h2>
                         <h2>Published On: <span id="date-time"> </span> </h2>
                     </div>
 
                 </div>
                 
-                <article class="px-2 text-md leading-tight font-['Poppins']  " id="article-content">
+                <!-- Article Content -->
+                <article class="px-2 text-md leading-tight font-['Poppins']" id="article-content">
                     
                 </article>
+
+                <!-- Know More Button -->
             <h2 class="self-center"><span id="source-link"><a href="https://www.cnn.com/2023/09/15/asia/kim-jong-un-north-korea-russia-komsomolsk-intl-hnk/index.html" class="bg-sky-600 hover:bg-sky-700 hover:text-gray-50 duration-200 ease-in-out px-2 font-semibold text-gray-200 py-1 rounded-md">Know More</a></span></h2>
         </section>
 

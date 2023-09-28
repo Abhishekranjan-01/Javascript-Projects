@@ -1,7 +1,5 @@
 const sideBar = document.getElementById('hamburger-menu');
 const  hamburgerButton = document.querySelector('[role=button]');
-console.log(hamburgerButton);
-
 
 hamburgerButton.addEventListener('click',()=>{
 

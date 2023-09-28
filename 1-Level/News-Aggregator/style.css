@@ -575,15 +575,6 @@ video {
   display: none;
 }
 
-.h-fit {
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.h-full {
-  height: 100%;
-}
-
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
@@ -750,6 +741,10 @@ video {
   transition-duration: 150ms;
 }
 
+.delay-200 {
+  transition-delay: 200ms;
+}
+
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -823,6 +818,18 @@ video {
 @media not all and (min-width: 640px) {
   .max-sm\:justify-end {
     justify-content: flex-end;
+  }
+
+  .max-sm\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
