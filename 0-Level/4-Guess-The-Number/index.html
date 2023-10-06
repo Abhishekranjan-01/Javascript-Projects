@@ -18,27 +18,34 @@
     -moz-appearance: textfield;
     }
     </style>
+
+    <script src="./script.js" defer></script>
 </head>
 <body class="bg-gray-800">
 
     <main class="flex justify-center items-center">
-        <section class="flex justify-center flex-col w-fit items-center gap-10 bg-slate-700 rounded-xl">
+        <form  class="flex justify-center flex-col w-fit items-center gap-10 bg-slate-700 rounded-xl my-4">
 
-            <h2 class="text-gray-200 text-4xl font-semibold text-center bg-[#181818] px-2 w-full" >Number guessing game</h2>
+            <h2 class="text-gray-200 text-4xl font-semibold text-center bg-[#181818] p-2 w-full rounded-t-xl " >Number guessing game</h2>
             
             <div>
                 <h2 class="text-gray-200">Try and guess a random number between 1 and 100.</h2>
     
-                <h2 class="text-gray-200">You have <span id="attempt-count">10</span>attempts to guess the right number</h2>
+                <h2 class="text-gray-200">You have <span id="attempt-count">10</span> attempts to guess the right number</h2>
             </div>
 
 
         
-            <h1 class="text-6xl font-semibold text-gray-200 ">Guess a number</h1>
+            <h1 class="text-6xl font-semibold text-gray-200  px-2">Guess a number</h1>
             
             <input class="px-3 py-2 rounded-lg text-black text-md font-semibold" type="number" name="" id="">
-    
-            <button class="text-gray-200 text-4xl bg-sky-800 px-5 py-2 rounded-lg" type="submit">Submit guess</button>
+            
+            <div class="flex flex-col items-center">
+                <button class="text-gray-200 text-4xl bg-sky-800 px-5 py-2 rounded-lg hover:bg-sky-600 ease-in-out duration-200" type="submit">Submit guess</button>
+
+                <h2 id="warning-message" class="text-red-600 text-xl font-semibold hidden">Please Enter Number Between 1 And 100</h2>
+            </div>
+
     
 
             <div>
@@ -49,7 +56,7 @@
                 <h2 class="text-gray-200">Guesses Remaining: <span id="guess-remaining">10</span></h2>
             </div>
 
-        </section>
+        </form>
     
     </main>
 
