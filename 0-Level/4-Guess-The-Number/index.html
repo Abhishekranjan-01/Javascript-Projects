@@ -24,6 +24,7 @@
 <body class="bg-gray-800">
 
     <main class="flex justify-center items-center">
+
         <form  class="flex justify-center flex-col w-fit items-center gap-10 bg-slate-700 rounded-xl my-4 ">
 
             <div class="w-full">
@@ -45,26 +46,28 @@
             
             
             <div>
-                <h2 class="text-gray-200">Try and guess a random number between 1 and 100.</h2>
+                <h2 class="text-gray-200 px-2">Try and guess a random number between 1 and 100.</h2>
     
-                <h2 class="text-gray-200">You have <span id="attempt-count">10</span> attempts to guess the right number</h2>
+                <h2 class="text-gray-200 px-2">You have <span id="attempt-count">10</span> attempts to guess the right number</h2>
             </div>
 
 
         
-            <h1 class="text-6xl font-semibold text-gray-200  px-2">Guess a number</h1>
+            <h1 class="text-center text-6xl font-semibold text-gray-200  px-2">Guess a number</h1>
             
             <input class="px-3 py-2 rounded-lg text-black text-md font-semibold" type="number" name="" id="">
             
             <div class="flex flex-col items-center">
                 <button class="text-gray-200 text-4xl bg-sky-800 px-5 py-2 rounded-lg hover:bg-sky-600 ease-in-out duration-200" type="submit">Submit guess</button>
 
-                <h2 id="warning-message" class="text-red-600 text-xl font-semibold hidden">Please Enter Number Between 1 And 100</h2>
+                <h2 id="warning-message" class="text-red-600  text-2xl font-semibold hidden">Please Enter Number Between 1 And 100</h2>
+
+                <h2 id="attempts" class="text-xl text-orange-400 font-semibold my-2 hidden">You Win In <span id="attempt-counts"></span> Attempts</h2>
             </div>
 
     
 
-            <div>
+            <div class="mb-4">
                 <div id="guesses" class="flex flex-row gap-1 text-gray-200">
                     <h3>Previous Guesses:</h3>
                    
