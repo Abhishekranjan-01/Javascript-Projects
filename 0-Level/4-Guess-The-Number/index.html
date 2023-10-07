@@ -24,9 +24,25 @@
 <body class="bg-gray-800">
 
     <main class="flex justify-center items-center">
-        <form  class="flex justify-center flex-col w-fit items-center gap-10 bg-slate-700 rounded-xl my-4">
+        <form  class="flex justify-center flex-col w-fit items-center gap-10 bg-slate-700 rounded-xl my-4 ">
 
-            <h2 class="text-gray-200 text-4xl font-semibold text-center bg-[#181818] p-2 w-full rounded-t-xl " >Number guessing game</h2>
+            <div class="w-full">
+                <h2 class="text-gray-200 text-4xl font-semibold text-center bg-[#181818] p-2 w-full rounded-t-xl " >Number guessing game</h2>
+
+
+                <div class="flex justify-between px-2">
+                    <button id="reset" type="reset" class="bg-yellow-300 rounded-lg px-2 text-lg font-semibold hover:bg-yellow-200 transition-all duration-200 ease-in-out hover:text-red-600">Reset</button>
+
+
+                    <button id="show-answer" type="button"  class="bg-green-400 rounded-lg px-2 text-lg font-semibold hover:bg-green-500 transition-all duration-200 ease-in-out  hover:text-red-400 text-red-200"
+                    
+                    >Show Answer</button>
+                </div>
+
+            </div>
+
+            
+            
             
             <div>
                 <h2 class="text-gray-200">Try and guess a random number between 1 and 100.</h2>
@@ -49,8 +65,9 @@
     
 
             <div>
-                <div class="flex flex-row gap-1 text-gray-200">
+                <div id="guesses" class="flex flex-row gap-1 text-gray-200">
                     <h3>Previous Guesses:</h3>
+                   
                 </div>
         
                 <h2 class="text-gray-200">Guesses Remaining: <span id="guess-remaining">10</span></h2>
