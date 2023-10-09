@@ -5,8 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe</title>
     <link rel="stylesheet" href="./style.css">
+
+    <script src="./allergies.js" defer></script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 </head>
-<body>
-    <h1 class="bg-gray-800 text-orange-700">hehehe</h1>
+<body class="bg-gray-900 h-screen">
+    <nav></nav>
+    <main class="flex h-full">
+        <section class="text-gray-200 h-full">
+
+            <ul class="flex flex-col items-center justify-between text-2xl h-full bg-orange-600 px-4 py-5">
+
+                <h1 class="text-5xl font-semibold text-gray-800">Filters</h1>
+
+                <li class=" hover:text-sky-600">Allergies <i class="fa-solid fa-play fa-2xs relative top-1"></i></li>
+                <li class=" hover:text-sky-600">Diets <i class="fa-solid fa-play fa-2xs relative top-1"></i></li>
+                <li class=" hover:text-sky-600">Calories <i class="fa-solid fa-play fa-2xs"></i></li>
+                <li class=" hover:text-sky-600">Nutrients <i class="fa-solid fa-play fa-2xs relative top-1"></i></li>
+            </ul>
+        </section>
+        <section>
+            <h1>Search Food</h1>
+
+            <!-- Allergies-checkboxes -->
+            <form class="px-2 bg-gray-800 flex flex-wrap gap-3 md:w-1/2 relative top-[15%]" id="allergies-checkboxes ">
+
+                <div data-allergies="Celery-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name="Calery-free" >
+                    <label for="Celery-free">Celery-free</label>
+                </div>
+
+                <div data-allergies="Crustacean-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name=" Crustacean-free" >
+                    <label for=" Crustacean-free"> Crustacean-free</label>
+                </div>
+
+                <div data-allergies="Dairy-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name="Dairy-free" >
+                    <label for="Dairy-free">Dairy-free</label>
+                </div>
+
+                <div data-allergies="Egg-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name="Egg-free" >
+                    <label for="Egg-free">Egg-free</label>
+                </div>
+
+                <div data-allergies="Fish-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name="Fish-free" >
+                    <label for="Fish-free">Fish-free</label>
+                </div>
+
+                <div data-allergies="Gluten-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name="Gluten-free" >
+                    <label for="Gluten-free">Gluten-free</label>
+                </div>
+
+                <div data-allergies="Lupine-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name="Lupine-free" >
+                    <label for="Lupine-free">Lupine-free</label>
+                </div>
+
+                <div data-allergies="Mustard-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name="Mustard-free" >
+                    <label for="Mustard-free">Mustard-free</label>
+                </div>
+
+                <div data-allergies="Peanut-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name="Peanut-free" >
+                    <label for="Peanut-free">Peanut-free</label>
+                </div>
+
+                <div data-allergies="Sesame-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name="Sesame-free" >
+                    <label for="Sesame-free">Sesame-free</label>
+                </div>
+
+                <div data-allergies="Shellfish-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name="Shellfish-free" >
+                    <label for="Shellfish-free">Shellfish-free</label>
+                </div>
+
+                <div data-allergies="Soy-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name="Soy-free" >
+                    <label for="Soy-free">Soy-free</label>
+                </div>
+
+                <div data-allergies="Tree-Nut-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name="Tree-Nut-free" >
+                    <label for="Tree-Nut-free">Tree-Nut-free</label>
+                </div>
+
+                <div data-allergies="Wheat-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                    <input type="checkbox" name="Wheat-free" >
+                    <label for="Wheat-free">Wheat-free</label>
+                </div>
+
+                <button class="bg-green-500 font-semibold rounded-md px-2 text-gray-200" type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
 </body>
 </html>
