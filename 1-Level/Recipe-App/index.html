@@ -6,7 +6,10 @@
     <title>Recipe</title>
     <link rel="stylesheet" href="./style.css">
 
-    <script src="./allergies.js" defer></script>
+
+    <script src="./filters/filterCloseButton.js" defer></script>
+    <script src="./filters/allergies.js" defer></script>
+    <script src="./filters/diets.js" defer></script>
 
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,29 +18,32 @@
 </head>
 <body class="bg-gray-900 h-screen">
     <nav class="hidden"></nav>
+
     <main class="flex h-full">
         <section class="text-gray-200 h-full">
 
-            <ul class="flex flex-col items-center justify-between text-2xl h-full bg-orange-600 px-4 py-5 cursor-default z-10 ">
+            <ul class="flex flex-col items-center justify-between text-2xl h-full md:w-[15vw] bg-orange-600 px-4 py-5 cursor-default z-20 ">
 
                 <h1 class="text-5xl font-semibold text-gray-800">Filters</h1>
 
                 <li id="allergies-filter" class=" hover:text-green-600">Allergies <i class="fa-solid fa-play fa-2xs relative top-1"></i></li>
-                <li class=" hover:text-sky-600">Diets <i class="fa-solid fa-play fa-2xs relative top-1"></i></li>
+                <li id="diets-filter" class=" hover:text-sky-600">Diets <i class="fa-solid fa-play fa-2xs relative top-1"></i></li>
                 <li class=" hover:text-sky-600">Calories <i class="fa-solid fa-play fa-2xs"></i></li>
                 <li class=" hover:text-sky-600">Nutrients <i class="fa-solid fa-play fa-2xs relative top-1"></i></li>
             </ul>
         </section>
-        <section>
-            <h1>Search Food</h1>
+        <section class="flex flex-col">
+            
+            
+            <h1 class="absolute top-0 -z-20">Search Food</h1>
 
             <!-- Allergies-checkboxes -->
-            <form class="px-2  bg-gray-800  md:w-1/2 relative top-[15%] rounded-r-lg -translate-x-full transition-all duration-200 ease-in-out -z-10" id="allergies-checkboxes">
+            <form data-allergies="allergie-form" data-filter-form="filter-form" class="px-2  bg-gray-800 h-full md:w-1/2 absolute rounded-r-lg -translate-x-full transition-all duration-200 ease-in-out -z-10" id="allergies-checkboxes">
 
                 <div class="flex justify-between items-center">
                     <h1 class="text-gray-200 font-semibold text-3xl text-center py-1">Allergies</h1>
 
-                    <i id="allergies-close" class="fa-solid fa-xmark fa-2xl text-gray-200"></i>
+                    <i data-filter-close="filter-close" class="fa-solid fa-xmark fa-2xl text-gray-200"></i>
                 </div>
 
 
@@ -112,6 +118,128 @@
                         <label for="Wheat-free">Wheat-free</label>
                     </div>
     
+                    <button class="bg-green-500 font-semibold rounded-md px-2 text-gray-200" type="submit">Submit</button>
+                </div>
+
+                
+            </form>
+            <!-- Allergies-checkboxes END-->
+
+
+            <!-- Diets-checkboxes -->
+
+            <form data-diets="diets-form" data-filter-form="filter-form" class="px-2  bg-gray-800 h-full md:w-1/2 absolute rounded-r-lg -translate-x-full transition-all duration-200 ease-in-out -z-10" id="diets-checkboxes">
+
+                <!-- Heading and Closing Option -->
+                <div class="flex justify-between items-center">
+                    <h1 class="text-gray-200 font-semibold text-3xl text-center py-1">Diets</h1>
+
+                    <i data-filter-close="filter-close" class="fa-solid fa-xmark fa-2xl text-gray-200"></i>
+                </div>
+
+
+                <div class="flex flex-wrap gap-3">
+                    <div data-diets="Alcohol-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Alcohol-free" >
+                        <label for="Alcohol-free">Alcohol-free</label>
+                    </div>
+    
+                    <div data-diets="Balanced" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name=" Balanced" >
+                        <label for="Balanced"> Balanced</label>
+                    </div>
+    
+                    <div data-diets="High-Fiber" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="High-Fiber" >
+                        <label for="High-Fiber">High-Fiber</label>
+                    </div>
+    
+                    <div data-diets="High-Protein" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="High-Protein" >
+                        <label for="High-Protein">High-Protein</label>
+                    </div>
+    
+                    <div data-diets="Keto" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Keto" >
+                        <label for="Keto">Keto</label>
+                    </div>
+    
+                    <div data-diets="Kidney friendly" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Kidney friendly" >
+                        <label for="Kidney friendly">Kidney friendly</label>
+                    </div>
+    
+                    <div data-diets="Kosher" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Kosher" >
+                        <label for="Kosher">Kosher</label>
+                    </div>
+    
+                    <div data-diets="Low-Carb" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Low-Carb" >
+                        <label for="Low-Carb">Low-Carb</label>
+                    </div>
+    
+                    <div data-diets="Low-Carb" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Low-Carb" >
+                        <label for="Low-Carb">Low-Carb</label>
+                    </div>
+    
+                    <div data-diets="Low potassium" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Low potassium" >
+                        <label for="Low potassium">Low potassium</label>
+                    </div>
+    
+                    <div data-diets="Low-Sodium" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Low-Sodium" >
+                        <label for="Low-Sodium">Low-Sodium</label>
+                    </div>
+    
+                    <div data-diets="No oil added" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="No oil added" >
+                        <label for="No oil added">No oil added</label>
+                    </div>
+    
+                    <div data-diets="No-sugar" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="No-sugar" >
+                        <label for="No-sugar">No-sugar</label>
+                    </div>
+    
+                    <div data-diets="Paleo" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Paleo" >
+                        <label for="Paleo">Paleo</label>
+                    </div>
+    <!-- 555 -->
+
+                    <div data-diets="Pescatarian" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Pescatarian" >
+                        <label for="Pescatarian">Pescatarian</label>
+                    </div>
+
+                    <div data-diets="Pork-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Pork-free" >
+                        <label for="Pork-free">Pork-free</label>
+                    </div>
+
+                    <div data-diets="Red meat-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Red meat-free" >
+                        <label for="Red meat-free">Red meat-free</label>
+                    </div>
+
+                    <div data-diets="Sugar-conscious" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Sugar-conscious" >
+                        <label for="Sugar-conscious">Sugar-conscious</label>
+                    </div>
+
+                    <div data-diets="Vegan" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Vegan" >
+                        <label for="Vegan">Vegan</label>
+                    </div>
+
+                    <div data-diets="Vegetarian" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <input type="checkbox" name="Vegetarian" >
+                        <label for="Vegetarian">Vegetarian</label>
+                    </div>
+
                     <button class="bg-green-500 font-semibold rounded-md px-2 text-gray-200" type="submit">Submit</button>
                 </div>
 
