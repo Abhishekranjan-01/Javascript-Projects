@@ -16,41 +16,39 @@
 
 
 </head>
-<body class="bg-gray-900 h-screen">
+<body class="bg-green-800 h-screen">
     <nav class="hidden"></nav>
 
-    <main class="flex h-full">
-        <section class="text-gray-200 h-full">
+    <main class="flex w-full h-full">
+        <section class="text-gray-200 w-full h-full">
 
-            <ul class="flex flex-col items-center justify-between text-2xl h-full md:w-[15vw] bg-orange-600 px-4 py-5 cursor-default z-20 ">
+            <ul class="flex flex-col items-center gap-5 text-2xl  md:w-full bg-orange-600 py-5 cursor-default z-20 ">
 
                 <h1 class="text-5xl font-semibold text-gray-800">Filters</h1>
 
-                <li id="allergies-filter" class=" hover:text-green-600">Allergies <i class="fa-solid fa-play fa-2xs relative top-1"></i></li>
-                <li id="diets-filter" class=" hover:text-sky-600">Diets <i class="fa-solid fa-play fa-2xs relative top-1"></i></li>
-                <li class=" hover:text-sky-600">Calories <i class="fa-solid fa-play fa-2xs"></i></li>
-                <li class=" hover:text-sky-600">Nutrients <i class="fa-solid fa-play fa-2xs relative top-1"></i></li>
-            </ul>
-        </section>
-        <section class="flex flex-col">
-            
-            
-            <h1 class="absolute top-0 -z-20">Search Food</h1>
-
-            <!-- Allergies-checkboxes -->
-            <form data-allergies="allergie-form" data-filter-form="filter-form" class="px-2  bg-gray-800 h-full md:w-1/2 absolute rounded-r-lg -translate-x-full transition-all duration-200 ease-in-out -z-10" id="allergies-checkboxes">
-
-                <div class="flex justify-between items-center">
-                    <h1 class="text-gray-200 font-semibold text-3xl text-center py-1">Allergies</h1>
-
-                    <i data-filter-close="filter-close" class="fa-solid fa-xmark fa-2xl text-gray-200"></i>
-                </div>
+                <li id="allergies-filter" class=" hover:text-green-600 order-5">Allergies 
+                    <i class="fa-solid fa-play fa-2xs relative top-1"></i>
+                </li>
 
 
-                <div class="flex flex-wrap gap-3">
-                    <div data-allergies="Celery-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
-                        <input type="checkbox" name="Calery-free" >
-                        <label for="Celery-free">Celery-free</label>
+                <!-- alll -->
+
+
+                
+                <!-- Allergies-checkboxes -->
+                <form data-allergies="allergie-form" data-filter-form="filter-form" class="order-6 text-base px-2 py-4  bg-gray-800 w-full hidden -translate-y-full transition-all duration-200 ease-in-out z-50" id="allergies-checkboxes">
+
+                    <div class="flex justify-between items-center">
+                    <!-- <h1 class="text-gray-200 font-semibold text-3xl text-center py-1">Allergies</h1> -->
+
+                    <!-- <i data-filter-close="filter-close" class="fa-solid fa-xmark fa-2xl text-gray-200"></i> -->
+                 </div>
+
+
+                    <div class="flex flex-wrap gap-3">
+                        <div data-allergies="Celery-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                            <input type="checkbox" name="Calery-free" >
+                            <label for="Celery-free">Celery-free</label>
                     </div>
     
                     <div data-allergies="Crustacean-free" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
@@ -123,18 +121,22 @@
 
                 
             </form>
-            <!-- Allergies-checkboxes END-->
+                <!-- Allergies-checkboxes END-->
 
 
-            <!-- Diets-checkboxes -->
 
-            <form data-diets="diets-form" data-filter-form="filter-form" class="px-2  bg-gray-800 h-full md:w-1/2 absolute rounded-r-lg -translate-x-full transition-all duration-200 ease-in-out -z-10" id="diets-checkboxes">
+                <li id="diets-filter" class=" hover:text-sky-600 order-7">Diets <i class="fa-solid fa-play fa-2xs relative top-1"></i></li>
+
+
+                  <!-- Diets-checkboxes -->
+
+            <form data-diets="diets-form" data-filter-form="filter-form" class="order-8 text-base px-2 py-4 bg-gray-800 w-full hidden -translate-y-full transition-all duration-200 ease-in-out z-50" id="diets-checkboxes">
 
                 <!-- Heading and Closing Option -->
                 <div class="flex justify-between items-center">
-                    <h1 class="text-gray-200 font-semibold text-3xl text-center py-1">Diets</h1>
+                    <!-- <h1 class="text-gray-200 font-semibold text-3xl text-center py-1">Diets</h1> -->
 
-                    <i data-filter-close="filter-close" class="fa-solid fa-xmark fa-2xl text-gray-200"></i>
+                    <!-- <i data-filter-close="filter-close" class="fa-solid fa-xmark fa-2xl text-gray-200"></i> -->
                 </div>
 
 
@@ -245,6 +247,18 @@
 
                 
             </form>
+
+                <li class=" hover:text-sky-600 order-3">Calories <i class="fa-solid fa-play fa-2xs"></i></li>
+                <li class=" hover:text-sky-600 order-1">Nutrients <i class="fa-solid fa-play fa-2xs relative top-1"></i></li>
+            </ul>
+        </section>
+        <section class="flex flex-col hidden">
+            
+            
+            <h1 class="absolute top-0 -z-20">Search Food</h1>
+
+
+          
         </section>
     </main>
 </body>
