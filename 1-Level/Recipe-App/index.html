@@ -10,6 +10,7 @@
     <script src="./filters/filterCloseButton.js" defer></script>
     <script src="./filters/allergies.js" defer></script>
     <script src="./filters/diets.js" defer></script>
+    <script src="./filters/nutrients.js" defer></script>
 
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -242,7 +243,7 @@
                         <label for="Vegetarian">Vegetarian</label>
                     </div>
 
-                    <button class="bg-green-500 font-semibold rounded-md px-2 text-gray-200" type="submit">Submit</button>
+                    <button data-nutrients="submit" class="bg-green-500 font-semibold rounded-md px-2 text-gray-200" type="submit">Submit</button>
                 </div>
 
                 
@@ -255,7 +256,7 @@
 
 
                  <!-- Nutrients-checkboxes -->
-                 <form data-nutrients="nutrients-form" data-filter-form="filter-form" class="order-2 text-base px-2 py-4  bg-gray-800 w-full transition-all duration-200 ease-in-out z-50" id="allergies-checkboxes">
+                 <form id="nutrients-form" data-nutrients="nutrients-form" data-filter-form="filter-form" class="order-2 text-base px-2 py-4  bg-gray-800 w-full transition-all duration-200 ease-in-out z-50" id="allergies-checkboxes">
 
                     <div class="flex justify-between items-center">
                     <!-- <h1 class="text-gray-200 font-semibold text-3xl text-center py-1">nutrients</h1> -->
@@ -450,6 +451,12 @@
                         <input type="checkbox" name="Zinc" >
                         <label for="Zinc">Zinc</label>
                     </div>
+
+                    <!-- <div data-nutrients="Search">
+                        <input type="text">
+                    </div> -->
+
+
                     <button class="bg-green-500 font-semibold rounded-md px-2 text-gray-200" type="submit">Submit</button>
                 </div>
 
