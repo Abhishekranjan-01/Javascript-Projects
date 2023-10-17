@@ -263,32 +263,33 @@
 
                 <!-- Nutrients Checkboxes and Amount of Nutrients -->
 
-
                  <!-- Nutrients-checkboxes -->
-                 <form id="nutrients-form" data-nutrients="nutrients-form" data-filter-form="filter-form" class="order-2 text-base px-2 py-4  bg-gray-800 w-full transition-all duration-200 ease-in-out z-50" id="allergies-checkboxes">
+                <form id="nutrients-form" data-nutrients="nutrients-form" data-filter-form="filter-form" class="order-2 text-base px-2 py-4  bg-gray-800 w-full transition-all duration-200 ease-in-out z-50" id="allergies-checkboxes">
 
                     <div class="flex justify-between items-center">
                     <!-- <h1 class="text-gray-200 font-semibold text-3xl text-center py-1">nutrients</h1> -->
 
                     <!-- <i data-filter-close="filter-close" class="fa-solid fa-xmark fa-2xl text-gray-200"></i> -->
-                 </div>
+                    </div>
 
 
                     <div class="flex flex-wrap gap-3">
-                        <div data-nutrients="Carbohydrates" class="relative text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
+                        <div data-nutrients="Carbohydrates" class="relative text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold hidden">
 
+
+                            <input type="checkbox" name="Carbohydrates" >
+                            <label for="Carbohydrates">Carbohydrates</label>
+
+                            
                             <div data-Carbohydrates="Carbohydrates-amount" class="text-gray-900 bg-sky-400 absolute -top-8 flex flex-row gap-3 px-2 py-2 justify-center items-start"
                             style="clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 59% 78%, 48% 100%, 35% 78%, 0 77%);">
-                            
+
                                 <label for="Carbohydrates-min-amount" class="text-xs font-semibold">Min</label>
                                 <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name="Carbohydrates-min-amount">
 
                                 <label for="Carbohydrates-max-amount" class="text-xs font-semibold">Min</label>
                                 <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name="Carbohydrates-max-amount">
                             </div>
-
-                            <input type="checkbox" name="Carbohydrates" >
-                            <label for="Carbohydrates">Carbohydrates</label>
                     </div>
     
                     <div data-nutrients="Protein" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
@@ -477,7 +478,7 @@
                     </div> -->
 
 
-                    <button data-nutrients="submit" class="bg-green-500 font-semibold rounded-md px-2 text-gray-200" type="submit">Submit</button>
+                    <button data-submit-nutrients="submit-nutrients" class="bg-green-500 font-semibold rounded-md px-2 text-gray-200" type="submit">Submit</button>
                 </div>
 
                 
