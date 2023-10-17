@@ -18,7 +18,7 @@ for(let nutrient of nutrientsCheckboxes){
     >
 
         <label for=${nutrient.innerText}-min-amount class="text-xs font-semibold">Min</label>
-        <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name=${nutrient.innerText}-min-amount>
+        <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name=${nutrient.innerText}-min-amount value="10">
 
         <label for=${nutrient.innerText}-max-amount class="text-xs font-semibold">Min</label>
         <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name=${nutrient.innerText}-max-amount>
@@ -27,6 +27,8 @@ for(let nutrient of nutrientsCheckboxes){
 
     nutrient.childNodes[3].addEventListener("click",()=>{
         nutrient.lastChild.classList.toggle('hidden');
+
+        console.log(nutrient.childNodes);
     });
 
     
