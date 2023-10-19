@@ -5,23 +5,25 @@ const submitNutrientsForm = document.querySelector("[data-nutrients='submit']");
 
 const nutrientsCheckboxes = document.querySelectorAll('#nutrients-form [data-nutrients]');
 
-
-
-
+document.querySelector("[data-Carbohydrates='Carbohydrates-amount']").remove();
 
 for(let nutrient of nutrientsCheckboxes){
    
+console.log(nutrient.getAttribute('data-nutrients'));
 
+    
     nutrient.classList.add('relative');
 
-    nutrient.innerHTML+= `<div data-${nutrient.innerText=`${nutrient.innerText}-amount`} class="text-gray-900 bg-sky-400 absolute -top-8 flex flex-row gap-3 px-2 py-2 justify-center items-start hidden"
+    nutrient.innerHTML+= `<div data-${nutrient.getAttribute('data-nutrients')}-amount class="text-gray-900 bg-sky-400 absolute -top-8 flex flex-row gap-3 px-2 py-2 justify-center items-start hidden"
     >
 
-        <label for=${nutrient.innerText}-min-amount class="text-xs font-semibold">Min</label>
-        <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name=${nutrient.innerText}-min-amount value="10">
+        <label for= min${nutrient.getAttribute('data-nutrients')} class="text-xs font-semibold">Min</label>
 
-        <label for=${nutrient.innerText}-max-amount class="text-xs font-semibold">Min</label>
-        <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name=${nutrient.innerText}-max-amount>
+        <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name = "min${nutrient.getAttribute('data-nutrients')}" value="10">
+
+        <label for= max${nutrient.getAttribute('data-nutrients')} class="text-xs font-semibold">Max</label>
+
+        <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name='max${nutrient.getAttribute('data-nutrients')}'>
     </div>`;
 
 
@@ -31,7 +33,8 @@ for(let nutrient of nutrientsCheckboxes){
         console.log(nutrient.childNodes);
     });
 
-    
+    console.log(nutrient);
+
 
 }
 
@@ -53,12 +56,16 @@ const yyy = document.querySelector("[data-Carbohydrates='Carbohydrates-amount']"
 
 console.log(yyy);
 
-console.log(ff);
+console.log(ff);    
 
 for(let i of ff){
     console.log(i);
 }
 
 // console.log(new FormData(nutrientsForm,));
+console.log(document.querySelector("[data-nutrients='Carbohydrates']"));//Carbohydrates
 
-})
+
+});
+
+

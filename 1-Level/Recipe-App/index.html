@@ -11,6 +11,7 @@
     <script src="./filters/allergies.js" defer></script>
     <script src="./filters/diets.js" defer></script>
     <script src="./filters/nutrients.js" defer></script>
+    <script src="./script.js"></script>
 
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -284,17 +285,17 @@
                             <div data-Carbohydrates="Carbohydrates-amount" class="text-gray-900 bg-sky-400 absolute -top-8 flex flex-row gap-3 px-2 py-2 justify-center items-start hidden"
                             style="clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 59% 78%, 48% 100%, 35% 78%, 0 77%);">
 
-                                <label for="Carbohydrates-min-amount" class="text-xs font-semibold">Min</label>
-                                <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name="Carbohydrates-min-amount" >
+                                <label for="minCarbohydrates" class="text-xs font-semibold">Min</label>
+                                <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name="minCarbohydrates" >
 
-                                <label for="Carbohydrates-max-amount" class="text-xs font-semibold">Min</label>
-                                <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name="Carbohydrates-max-amount">
+                                <label for="maxCarbohydrates" class="text-xs font-semibold">Min</label>
+                                <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name="maxCarbohydrates">
                             </div>
                     </div>
     
                     <div data-nutrients="Protein" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
                         <input type="checkbox" name="Protein" >
-                        <label for=" Protein"> Protein</label>
+                        <label for=" Protein">Protein</label>
                     </div>
     
                     <div data-nutrients="Calories" class="text-gray-800 bg-gray-300 px-3 rounded-lg font-semibold">
