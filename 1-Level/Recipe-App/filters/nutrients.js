@@ -5,38 +5,44 @@ const submitNutrientsForm = document.querySelector("[data-nutrients='submit']");
 
 const nutrientsCheckboxes = document.querySelectorAll('#nutrients-form [data-nutrients]');
 
-document.querySelector("[data-Carbohydrates='Carbohydrates-amount']").remove();
+// document.querySelector("[data-Carbohydrates='Carbohydrates-amount']").remove();
 
-for(let nutrient of nutrientsCheckboxes){
+for(let i = 1 ; i < nutrientsCheckboxes.length; i++){
    
-console.log(nutrient.getAttribute('data-nutrients'));
+// console.log(nutrient.getAttribute('data-nutrients'));
 
     
-    nutrient.classList.add('relative');
+nutrientsCheckboxes[i].classList.add('relative');
 
-    nutrient.innerHTML+= `<div data-${nutrient.getAttribute('data-nutrients')}-amount class="text-gray-900 bg-sky-400 absolute -top-8 flex flex-row gap-3 px-2 py-2 justify-center items-start hidden"
+nutrientsCheckboxes[i].innerHTML+= `<div data-${nutrientsCheckboxes[i].getAttribute('data-nutrients')}-amount class="text-gray-900 bg-sky-400 absolute -top-8 flex flex-row gap-3 px-2 py-2 justify-center items-start hidden"
     >
 
-        <label for= min${nutrient.getAttribute('data-nutrients')} class="text-xs font-semibold">Min</label>
+        <label for= min${nutrientsCheckboxes[i].getAttribute('data-nutrients')} class="text-xs font-semibold">Min</label>
 
-        <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name = "min${nutrient.getAttribute('data-nutrients')}" value="10">
+        <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name = "min${nutrientsCheckboxes[i].getAttribute('data-nutrients')}" value="10">
 
-        <label for= max${nutrient.getAttribute('data-nutrients')} class="text-xs font-semibold">Max</label>
+        <label for= max${nutrientsCheckboxes[i].getAttribute('data-nutrients')} class="text-xs font-semibold">Max</label>
 
-        <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name='max${nutrient.getAttribute('data-nutrients')}'>
+        <input class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name='max${nutrientsCheckboxes[i].getAttribute('data-nutrients')}'>
     </div>`;
 
 
-    nutrient.childNodes[3].addEventListener("click",()=>{
-        nutrient.lastChild.classList.toggle('hidden');
+    nutrientsCheckboxes[i].childNodes[3].addEventListener("click",()=>{
+        nutrientsCheckboxes[i].lastChild.classList.toggle('hidden');
 
-        console.log(nutrient.childNodes);
+        console.log(nutrientsCheckboxes[i].childNodes);
     });
 
-    console.log(nutrient);
+    // console.log(nutrient);
 
 
 }
+
+nutrientsCheckboxes[0].childNodes[3].addEventListener("click",()=>{
+    nutrientsCheckboxes[0].childNodes[5].classList.toggle('hidden');
+
+    // console.log(nutrientsCheckboxes[0].childNodes[5]);
+});
 
 // console.log(nutrientsForm);
 // console.log(submitNutrientsForm);
@@ -44,7 +50,7 @@ console.log(nutrient.getAttribute('data-nutrients'));
 
 
 // console.log(nutrientsForm);
-
+//----------------------------------------------------------------------------------------------
 
 nutrientsForm.addEventListener("submit",(e)=>{
 e.preventDefault();
@@ -52,20 +58,44 @@ e.preventDefault();
 
 const ff = new FormData(nutrientsForm,submitNutrientsForm);
 
-const yyy = document.querySelector("[data-Carbohydrates='Carbohydrates-amount']");
+// const yyy = document.querySelector("[data-Carbohydrates='Carbohydrates-amount']");
 
-console.log(yyy);
+// console.log(" :",(yyy));
 
-console.log(ff);    
+console.log(ff);
+const arrayOfAmounts = [];    
+let leaveFirst = 0;
 
+let amount,count;
 for(let i of ff){
-    console.log(i);
+    [amount,count] = i;
+    
+
+    if(count!='on' && count){
+        
+        if(leaveFirst){
+            // console.log(`&${amount}=${count}`);
+            arrayOfAmounts.push(`&${amount}=${count}`);
+        }else{
+            // console.log(`${amount}=${count}`);
+            arrayOfAmounts.push(`${amount}=${count}`);
+        }
+
+       
+        
+    }
+
+    leaveFirst++;
+//   console.log("leaveFirst: ",leaveFirst);
+    // console.log(i)
+
 }
 
 // console.log(new FormData(nutrientsForm,));
+
 console.log(document.querySelector("[data-nutrients='Carbohydrates']"));//Carbohydrates
 
-
+console.log(arrayOfAmounts);
 });
 
 
