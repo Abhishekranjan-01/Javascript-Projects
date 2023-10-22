@@ -70,7 +70,7 @@ let leaveFirst = 0;
 let amount,count;
 for(let i of ff){
     [amount,count] = i;
-    
+    // console.log(i);
 
     // if(count!='on' && count){
         
@@ -112,6 +112,7 @@ for(let i of ff){
 // console.log(new FormData(nutrientsForm,));
 
 //console.log(document.querySelector("[data-fat='fat-amount']"));//Carbohydrates
+arrayOfAmounts[0] = arrayOfAmounts[0].slice(1);
 
 console.log(arrayOfAmounts);
 });
