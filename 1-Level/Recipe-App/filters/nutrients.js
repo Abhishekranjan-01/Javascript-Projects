@@ -93,14 +93,24 @@ for(let i of ff){
         [nutrientName] = i;
         console.log((nutrientName[0].toLowerCase()+nutrientName.slice(1)));
 
-        console.log(document.querySelector(`[data-${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}= '${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}-amount'] [data-min-amount='min-amount']`));
-    
-        const minValue = document.querySelector(`[data-${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}= '${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}-amount'] [data-min-amount='min-amount']`);
+        //#############################################################
+
+        // console.log(document.querySelector(`[data-${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}= '${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}-amount'] [data-min-amount='min-amount']`));
+        
+        //Bewlow not work for dashed-nutrients
+        // const minValue = document.querySelector(`[data-${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}= '${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}-amount'] [data-min-amount='min-amount']`);
+
+        //#####################################################################
+
+        const minValue =document.querySelector(`[data-nutrients='${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}'] [data-min-amount='min-amount']`);
+
+        console.log(document.querySelector(`[data-nutrients='${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}'] [data-min-amount='min-amount']`));
 
         minValue.value = 100;
         console.log(minValue.value);
 
         arrayOfAmounts.push(`&${amount}=${100}`);
+        
 
     }
 
@@ -115,4 +125,10 @@ for(let i of ff){
 arrayOfAmounts[0] = arrayOfAmounts[0].slice(1);
 
 console.log(arrayOfAmounts);
+
+const kk = new FormData(nutrientsForm);
+
+for(let j of kk){
+    console.log(j);
+}
 });
