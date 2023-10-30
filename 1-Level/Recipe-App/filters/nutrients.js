@@ -20,7 +20,7 @@ nutrientsCheckboxes[i].innerHTML+= `<div data-${nutrientsCheckboxes[i].getAttrib
 
         <label for= min${nutrientsCheckboxes[i].getAttribute('data-nutrients')} class="text-xs font-semibold">Min</label>
 
-        <input data-min-amount="min-amount" class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name = "min${nutrientsCheckboxes[i].getAttribute('data-nutrients')}" value="10">
+        <input data-min-amount="min-amount" class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name = "min${nutrientsCheckboxes[i].getAttribute('data-nutrients')}" value="0">
 
         <label for= max${nutrientsCheckboxes[i].getAttribute('data-nutrients')} class="text-xs font-semibold">Max</label>
 
@@ -102,9 +102,12 @@ for(let i of ff){
 
         //#####################################################################
 
-        const minValue =document.querySelector(`[data-nutrients='${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}'] [data-min-amount='min-amount']`);
+        const minValue =document.querySelector(`[data-nutrients='${(nutrientName[0].toUpperCase()+nutrientName.slice(1))}'] [data-min-amount='min-amount']`);
+    // / #########################################################
+        // console.log(document.querySelector(`[data-nutrients='${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}'] [data-min-amount='min-amount']`));
 
-        console.log(document.querySelector(`[data-nutrients='${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}'] [data-min-amount='min-amount']`));
+    // / #####################################################    
+        console.log(document.querySelector(`[data-nutrients='${(nutrientName[0].toUpperCase()+nutrientName.slice(1))}'] [data-min-amount='min-amount']`));
 
         minValue.value = 100;
         console.log(minValue.value);
@@ -122,13 +125,40 @@ for(let i of ff){
 // console.log(new FormData(nutrientsForm,));
 
 //console.log(document.querySelector("[data-fat='fat-amount']"));//Carbohydrates
-arrayOfAmounts[0] = arrayOfAmounts[0].slice(1);
+// arrayOfAmounts[0] = arrayOfAmounts[0].slice(1);
 
-console.log(arrayOfAmounts);
+// console.log(arrayOfAmounts);
+
+
+//Deleting All Elements Of ArrayOfAmounts Before Updating
+for(let i = arrayOfAmounts.length ;i>0 ;i--){
+    console.log(arrayOfAmounts.length,"---   ",arrayOfAmounts.pop());
+}
 
 const kk = new FormData(nutrientsForm);
 
+let leaveOne = 0;
+
 for(let j of kk){
-    console.log(j);
+
+    //leaveOne++;
+    let [amount,count] = j;
+    if(amount && (count!="on" && count!="")){
+        
+        if(leaveOne){
+        //    console.log("0: ",j[0],"1: ",j[1]); 
+        arrayOfAmounts.push((`&${j[0]}=${j[1]}`)); 
+        }else{
+            // console.log("E0: ",j[0],"E1: ",j[1]); 
+            arrayOfAmounts.push((`${j[0]}=${j[1]}`)); 
+        }
+        
+        leaveOne++;
+    }
+
+
+    
 }
+
+console.log(arrayOfAmounts);
 });
