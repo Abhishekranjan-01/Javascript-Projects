@@ -45,13 +45,6 @@ nutrientsCheckboxes[0].childNodes[3].addEventListener("click",()=>{
     // console.log(nutrientsCheckboxes[0].childNodes[5]);
 });
 
-// console.log(nutrientsForm);
-// console.log(submitNutrientsForm);
-// console.log('ff: \n',ff);
-
-
-// console.log(nutrientsForm);
-//----------------------------------------------------------------------------------------------
 
 nutrientsForm.addEventListener("submit",(e)=>{
 e.preventDefault();
@@ -59,11 +52,7 @@ e.preventDefault();
 
 const ff = new FormData(nutrientsForm,submitNutrientsForm);
 
-// const yyy = document.querySelector("[data-Carbohydrates='Carbohydrates-amount']");
 
-// console.log(" :",(yyy));
-
-// console.log(ff);
 const arrayOfAmounts = [];    
 let leaveFirst = 0;
 
@@ -93,23 +82,15 @@ for(let i of ff){
         [nutrientName] = i;
         console.log((nutrientName[0].toLowerCase()+nutrientName.slice(1)));
 
-        //#############################################################
-
-        // console.log(document.querySelector(`[data-${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}= '${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}-amount'] [data-min-amount='min-amount']`));
-        
-        //Bewlow not work for dashed-nutrients
-        // const minValue = document.querySelector(`[data-${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}= '${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}-amount'] [data-min-amount='min-amount']`);
-
-        //#####################################################################
 
         const minValue =document.querySelector(`[data-nutrients='${(nutrientName[0].toUpperCase()+nutrientName.slice(1))}'] [data-min-amount='min-amount']`);
-    // / #########################################################
-        // console.log(document.querySelector(`[data-nutrients='${(nutrientName[0].toLowerCase()+nutrientName.slice(1))}'] [data-min-amount='min-amount']`));
 
-    // / #####################################################    
         console.log(document.querySelector(`[data-nutrients='${(nutrientName[0].toUpperCase()+nutrientName.slice(1))}'] [data-min-amount='min-amount']`));
 
-        minValue.value = 100;
+        if(minValue.value < 10){
+            minValue.value = 10;
+        }
+       
         console.log(minValue.value);
 
         arrayOfAmounts.push(`&${amount}=${100}`);
@@ -160,5 +141,72 @@ for(let j of kk){
     
 }
 
-console.log(arrayOfAmounts);
+console.log(arrayOfAmounts.join(''));
+
+const API = fetch(`https://api.spoonacular.com/recipes/findByNutrients?${arrayOfAmounts.join('')}&apiKey=0a6207fb88e042d9b928a78699a52e5b`);
+
+API.then((response)=> response)
+.then((value)=>{
+    setTimeout(()=>{
+        console.log(value);
+        value.json().then((data)=>{
+            if(data.length == 0){
+                alert("No Food Found With Such Amount Of Nutrients");
+            }
+            console.log(data[0]);
+            addNutrientsApiResult(data);
+        });
+    },5000)
+    console.log("\n\nFetching In Progress\n\n\n");
+})
+.catch((error)=>{
+    console.log("Something Went Wrong");
+})
+
 });
+
+
+function addNutrientsApiResult(data){
+    const nutrientsResultSection = document.getElementById('nutrients-api-result');
+
+    const nutrientsOneByOne = document.querySelector("[data-nutrients-details='nutrients-details']");
+
+
+// console.log(nutrientsOneByOne);
+console.log("Nutrient One By One\n");
+    // console.log(nutrientsResultSection);
+    // console.log("*/*/*\n\n",data);
+
+    for(let dataX of data){
+        
+    nutrientsResultSection.innerHTML+=`<div class="flex justify-center">
+    <img class="" src=${dataX['image']} alt="Image Not Available">
+</div>
+
+<div>
+    <h1 class="text-2xl text-yellow-500">${dataX['title']}</h1>
+</div>`;
+const dataXnutrients = Object.entries(dataX);
+
+console.log(dataXnutrients);
+for(let dataXX of dataXnutrients){
+    console.log(dataXX);
+    if(dataXX[0] =='id' || dataXX[0] == 'title' || dataXX[0] == 'image' || dataXX[0] == 'imageType'){
+        //Do Nothing
+        continue;
+    }else{
+        const nutriOneByOne = document.createElement("div");
+
+        nutriOneByOne.classList.add("flex","justify-evenly","w-full","text-left","text-gray-200");
+        nutriOneByOne.innerHTML += `   <h2 class="text-left">${dataXX[0]}</h2>
+                                       <h2 class="text-left">${dataXX[1]}</h2>`;
+                                 
+            nutrientsResultSection.append(nutriOneByOne);
+    }
+
+    // break;
+}
+
+
+    }
+}

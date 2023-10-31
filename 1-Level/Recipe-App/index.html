@@ -30,7 +30,7 @@
 <body class="bg-green-800 h-screen">
     <nav class="hidden"></nav>
 
-    <main class="flex w-full h-full">
+    <main class="flex w-full ">
         <section class="text-gray-200 w-full h-full">
 
             <ul class="flex flex-col items-center gap-5 text-2xl  md:w-full bg-orange-600 py-5 cursor-default z-20 ">
@@ -286,10 +286,10 @@
                             style="clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 59% 78%, 48% 100%, 35% 78%, 0 77%);">
 
                                 <label for="minCarbohydrates" class="text-xs font-semibold">Min</label>
-                                <input data-min-amount="max-amount" class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name="minCarbs" value="10" >
+                                <input data-min-amount="min-amount" class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name="minCarbs" value="0" >
 
                                 <label for="maxCarbohydrates" class="text-xs font-semibold">Max</label>
-                                <input data-min-amount="min-amount" class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name="maxCarbs">
+                                <input data-max-amount="max-amount" class="w-8 h-4 text-xs py-1 border border-black outline-none" type="number" name="maxCarbs">
 
                             </div>
                     </div>
@@ -496,5 +496,26 @@
           
         </section>
     </main>
+
+    <section id="nutrients-api-result" class="bg-gray-900 flex flex-col justify-center items-center">
+        <div class="flex justify-center">
+            <img class="w-1/2 hidden" src="https://images.pexels.com/photos/18798109/pexels-photo-18798109/free-photo-of-boats-moored-near-the-shore-with-the-view-of-mountains-in-the-horizon.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Image Not Available">
+        </div>
+
+        <div>
+            <h1 class="text-2xl text-yellow-500 hidden">Title : Lorem ipsum dolor sit amet.</h1>
+        </div>
+
+        <div data-nutrients-details="nutrients-details"
+        class="flex flex-col w-full"
+        >
+
+            <div class="flex justify-evenly text-left hidden">
+                <h2 >Alcohol</h2>
+                <h2>150mg</h2>
+            </div>
+        
+        </div>
+    </section>
 </body>
 </html>
