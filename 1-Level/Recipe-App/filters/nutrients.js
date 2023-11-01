@@ -13,7 +13,7 @@ for(let i = 1 ; i < nutrientsCheckboxes.length; i++){
 
     
 nutrientsCheckboxes[i].classList.add('relative');
-console.log(nutrientsCheckboxes[i].getAttribute('data-nutrients'));
+// console.log(nutrientsCheckboxes[i].getAttribute('data-nutrients'));
 
 nutrientsCheckboxes[i].innerHTML+= `<div data-${nutrientsCheckboxes[i].getAttribute('data-nutrients')}=${nutrientsCheckboxes[i].getAttribute('data-nutrients').toLowerCase()}-amount class="text-gray-900 bg-sky-400 absolute -top-8 flex flex-row gap-3 px-2 py-2 justify-center items-start hidden"
     >
@@ -31,12 +31,8 @@ nutrientsCheckboxes[i].innerHTML+= `<div data-${nutrientsCheckboxes[i].getAttrib
     nutrientsCheckboxes[i].childNodes[3].addEventListener("click",()=>{
         nutrientsCheckboxes[i].lastChild.classList.toggle('hidden');
 
-        // console.log(nutrientsCheckboxes[i].childNodes);
+       
     });
-
-    // console.log(nutrient);
-
-
 }
 
 nutrientsCheckboxes[0].childNodes[3].addEventListener("click",()=>{
@@ -45,13 +41,13 @@ nutrientsCheckboxes[0].childNodes[3].addEventListener("click",()=>{
     // console.log(nutrientsCheckboxes[0].childNodes[5]);
 });
 
+const checkboxedNutrients = [];
+
 
 nutrientsForm.addEventListener("submit",(e)=>{
 e.preventDefault();
 
-
 const ff = new FormData(nutrientsForm,submitNutrientsForm);
-
 
 const arrayOfAmounts = [];    
 let leaveFirst = 0;
@@ -59,21 +55,6 @@ let leaveFirst = 0;
 let amount,count;
 for(let i of ff){
     [amount,count] = i;
-    // console.log(i);
-
-    // if(count!='on' && count){
-        
-    //     if(leaveFirst){
-    //         // console.log(`&${amount}=${count}`);
-    //         arrayOfAmounts.push(`&${amount}=${count}`);
-    //     }else{
-    //         // console.log(`${amount}=${count}`);
-    //         arrayOfAmounts.push(`${amount}=${count}`);
-    //     }
-
-       
-        
-    // }
 
     let nutrientName;
 
@@ -94,22 +75,14 @@ for(let i of ff){
         console.log(minValue.value);
 
         arrayOfAmounts.push(`&${amount}=${100}`);
-        
+        checkboxedNutrients.push(`${amount[0].toLowerCase()}${amount.slice(1)}`);
 
     }
 
     leaveFirst++;
-//   console.log("leaveFirst: ",leaveFirst);
+    //console.log("leaveFirst: ",leaveFirst);
     // console.log(i)
-
 }
-// console.log(new FormData(nutrientsForm,));
-
-//console.log(document.querySelector("[data-fat='fat-amount']"));//Carbohydrates
-// arrayOfAmounts[0] = arrayOfAmounts[0].slice(1);
-
-// console.log(arrayOfAmounts);
-
 
 //Deleting All Elements Of ArrayOfAmounts Before Updating
 for(let i = arrayOfAmounts.length ;i>0 ;i--){
@@ -136,12 +109,9 @@ for(let j of kk){
         
         leaveOne++;
     }
-
-
-    
 }
 
-console.log(arrayOfAmounts.join(''));
+// console.log(arrayOfAmounts.join(''));
 
 const API = fetch(`https://api.spoonacular.com/recipes/findByNutrients?${arrayOfAmounts.join('')}&apiKey=0a6207fb88e042d9b928a78699a52e5b`);
 
@@ -156,57 +126,72 @@ API.then((response)=> response)
             console.log(data[0]);
             addNutrientsApiResult(data);
         });
-    },5000)
+    },1000)
     console.log("\n\nFetching In Progress\n\n\n");
 })
 .catch((error)=>{
     console.log("Something Went Wrong");
 })
-
 });
+
+
 
 
 function addNutrientsApiResult(data){
     const nutrientsResultSection = document.getElementById('nutrients-api-result');
 
-    const nutrientsOneByOne = document.querySelector("[data-nutrients-details='nutrients-details']");
+    // const nutrientsOneByOne = document.querySelector("[data-nutrients-details='nutrients-details']");
 
-
-// console.log(nutrientsOneByOne);
-console.log("Nutrient One By One\n");
-    // console.log(nutrientsResultSection);
-    // console.log("*/*/*\n\n",data);
-
-    for(let dataX of data){
+    for(let dataX of data)
+    {
         
-    nutrientsResultSection.innerHTML+=`<div class="flex justify-center">
-    <img class="" src=${dataX['image']} alt="Image Not Available">
-</div>
+        nutrientsResultSection.innerHTML+=`<div class="flex justify-center">
+            <img class="" src=${dataX['image']} alt="Image Not Available">
+        </div>
 
-<div>
-    <h1 class="text-2xl text-yellow-500">${dataX['title']}</h1>
-</div>`;
-const dataXnutrients = Object.entries(dataX);
+        <div>
+            <h1 class="text-2xl text-yellow-500 my-4">${dataX['title']}</h1>
+        </div>`;
+        const dataXnutrients = Object.entries(dataX);
+        
+        for(let dataXX of dataXnutrients)
+        {
+            console.log(dataXX);
+            if(dataXX[0] =='id' || dataXX[0] == 'title' || dataXX[0] == 'image' || dataXX[0] == 'imageType'){
+                //Do Nothing
+                continue;
+            }
+            else
+            {
+                const nutriOneByOne = document.createElement("div");
+                nutriOneByOne.classList.add("flex","justify-evenly","w-full","text-left","text-gray-200");
+                
+                   let checkboxedNutrientsExist = false;
 
-console.log(dataXnutrients);
-for(let dataXX of dataXnutrients){
-    console.log(dataXX);
-    if(dataXX[0] =='id' || dataXX[0] == 'title' || dataXX[0] == 'image' || dataXX[0] == 'imageType'){
-        //Do Nothing
-        continue;
-    }else{
-        const nutriOneByOne = document.createElement("div");
+                   for(let i=0;i<checkboxedNutrients.length;i++){
+                    if(dataXX[0] == checkboxedNutrients[i]){
+                        checkboxedNutrientsExist = true;
+                        break;
+                    }
+                    else{
+                        checkboxedNutrientsExist = false;
+                    }
+                   }
 
-        nutriOneByOne.classList.add("flex","justify-evenly","w-full","text-left","text-gray-200");
-        nutriOneByOne.innerHTML += `   <h2 class="text-left">${dataXX[0]}</h2>
-                                       <h2 class="text-left">${dataXX[1]}</h2>`;
-                                 
-            nutrientsResultSection.append(nutriOneByOne);
-    }
+                   if(checkboxedNutrientsExist){
+                    nutriOneByOne.innerHTML += `<h2 class="text-left px-2 rounded-md font-semibold " style="background-color:#4cd137;">${dataXX[0]}</h2>
+                    <h2 class="text-left px-2 rounded-md font-semibold " style="background-color:#4cd137;">${dataXX[1]}</h2>`;
 
-    // break;
-}
-
-
+                   }else
+                   {                         
+                        nutriOneByOne.innerHTML += `<h2 class="text-left">${dataXX[0]}</h2>
+                        <h2 class="text-left">${dataXX[1]}</h2>`;
+                        // continue;
+                    }
+                      // break;                                 
+                    nutrientsResultSection.append(nutriOneByOne);
+            }
+        // break;
+        }
     }
 }
