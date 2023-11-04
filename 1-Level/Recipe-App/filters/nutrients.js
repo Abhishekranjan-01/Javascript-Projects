@@ -115,22 +115,38 @@ for(let j of kk){
 
 const API = fetch(`https://api.spoonacular.com/recipes/findByNutrients?${arrayOfAmounts.join('')}&apiKey=0a6207fb88e042d9b928a78699a52e5b`);
 
-API.then((response)=> response)
-.then((value)=>{
-    setTimeout(()=>{
-        console.log(value);
-        value.json().then((data)=>{
+API.then((response)=> {
+    console.log(response);
+    // console.log(response);
+    try{
+        if(response.ok){
+            console.log(response.ok);
+            return (response.json());
+        }else{
+            throw ("Please Check Your Network Connection");
+        }
+    }
+    catch(Error){
+        alert(Error);
+
+    }
+   
+}
+    ).then((data)=>{
+    
+        console.log(data);
+        
             if(data.length == 0){
                 alert("No Food Found With Such Amount Of Nutrients");
             }
             console.log(data[0]);
             addNutrientsApiResult(data);
-        });
-    },1000)
+        
+    
     console.log("\n\nFetching In Progress\n\n\n");
 })
 .catch((error)=>{
-    console.log("Something Went Wrong");
+    alert("Please Check Your Network Connection");
 })
 });
 
