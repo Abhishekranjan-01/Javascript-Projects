@@ -75,7 +75,16 @@ for(let i of ff){
         console.log(minValue.value);
 
         arrayOfAmounts.push(`&${amount}=${100}`);
-        checkboxedNutrients.push(`${amount[0].toLowerCase()}${amount.slice(1)}`);
+        console.log("amm: ",amount);
+
+        if(amount == "Carbohydrates"){
+            checkboxedNutrients.push(`carbs`);
+        }else{
+            checkboxedNutrients.push(`${amount[0].toLowerCase()}${amount.slice(1)}`);
+        }
+
+
+
 
     }
 
@@ -183,7 +192,7 @@ function addNutrientsApiResult(data){
                 nutriOneByOne.classList.add("flex","justify-evenly","w-full","text-left","text-gray-200");
                 
                    let checkboxedNutrientsExist = false;
-
+                console.log(dataXX[0],"  :  ",checkboxedNutrients);
                    for(let i=0;i<checkboxedNutrients.length;i++){
                     if(dataXX[0] == checkboxedNutrients[i]){
                         checkboxedNutrientsExist = true;
