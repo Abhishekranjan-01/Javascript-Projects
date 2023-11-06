@@ -75,7 +75,6 @@ for(let i of ff){
         console.log(minValue.value);
 
         arrayOfAmounts.push(`&${amount}=${100}`);
-        console.log("amm: ",amount);
 
         if(amount == "Carbohydrates"){
             checkboxedNutrients.push(`carbs`);
@@ -171,11 +170,11 @@ function addNutrientsApiResult(data){
     {
         
         nutrientsResultSection.innerHTML+=`<div class="flex justify-center">
-            <img class="" src=${dataX['image']} alt="Image Not Available">
+            <img class="rounded-lg mt-4" src=${dataX['image']} alt="Image Not Available">
         </div>
 
         <div>
-            <h1 class="text-2xl text-yellow-500 my-4">${dataX['title']}</h1>
+            <h1 class="text-center text-2xl text-yellow-500 my-4 px-4">${dataX['title']}</h1>
         </div>`;
         const dataXnutrients = Object.entries(dataX);
         
@@ -189,10 +188,10 @@ function addNutrientsApiResult(data){
             else
             {
                 const nutriOneByOne = document.createElement("div");
-                nutriOneByOne.classList.add("flex","justify-evenly","w-full","text-left","text-gray-200");
+                nutriOneByOne.classList.add("flex","w-full","text-left","px-10","text-gray-200","justify-between","md:px-[35%]");
                 
                    let checkboxedNutrientsExist = false;
-                console.log(dataXX[0],"  :  ",checkboxedNutrients);
+                // console.log(dataXX[0],"  :  ",checkboxedNutrients);
                    for(let i=0;i<checkboxedNutrients.length;i++){
                     if(dataXX[0] == checkboxedNutrients[i]){
                         checkboxedNutrientsExist = true;
