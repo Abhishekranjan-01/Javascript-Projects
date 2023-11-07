@@ -1,15 +1,12 @@
 const nutrientsForm = document.getElementById('nutrients-form');
 const submitNutrientsForm = document.querySelector("[data-nutrients='submit']");
 
-// ---------------------------
-
 const nutrientsCheckboxes = document.querySelectorAll('#nutrients-form [data-nutrients]');
+let searchResultExistAlready = false;
 
-// document.querySelector("[data-Carbohydrates='Carbohydrates-amount']").remove();
 
 for(let i = 1 ; i < nutrientsCheckboxes.length; i++){
    
-// console.log(nutrient.getAttribute('data-nutrients'));
 
     
 nutrientsCheckboxes[i].classList.add('relative');
@@ -146,15 +143,20 @@ API.then((response)=> {
         
             if(data.length == 0){
                 alert("No Food Found With Such Amount Of Nutrients");
+            }else{
+                console.log(data[0]);
+                addNutrientsApiResult(data);
+                searchResultExistAlready = true;
             }
-            console.log(data[0]);
-            addNutrientsApiResult(data);
+
         
     
     console.log("\n\nFetching In Progress\n\n\n");
 })
 .catch((error)=>{
-    alert("Please Check Your Network Connection");
+    alert("Please Check Your Network Connection : 157",error);
+    console.log("Please Check Your Network Connection : 157\n\n",error);
+    console.log(error);
 })
 });
 
@@ -163,6 +165,12 @@ API.then((response)=> {
 
 function addNutrientsApiResult(data){
     const nutrientsResultSection = document.getElementById('nutrients-api-result');
+    if(searchResultExistAlready){
+        console.log("\nAlready Exist\n");
+        nutrientsResultSection.innerHTML="";
+        
+    console.log("\n\nDone Removing \n\n");
+    }
 
     // const nutrientsOneByOne = document.querySelector("[data-nutrients-details='nutrients-details']");
 
