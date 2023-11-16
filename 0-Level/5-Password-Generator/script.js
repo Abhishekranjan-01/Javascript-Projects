@@ -43,7 +43,14 @@ form.addEventListener("submit",(e)=>
     {
         if(formLength == 0){
             // Storing Password Length
-           passwordLength = parseInt(data[1]);
+           passwordLength = Math.abs(parseInt(data[1]));
+           
+           if(data[1] < 0){
+
+            // If Input Length Is Negative Then Converting It In Positive On HTML
+            document.querySelector("[name='Password-Length']").value = passwordLength; 
+
+           }
         } 
          //Adding Filters In Array Which Are Selected By User  
         if(data[0] == 'generateRandomUppercase'){
