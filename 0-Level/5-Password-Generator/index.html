@@ -7,9 +7,8 @@
 
         <!-- For-Checkbox-Stylling -->
         <!-- <link rel="stylesheet" href="./checkbox-styling.css"> -->
-
     <link rel="stylesheet" href="./style.css">
-
+    <script src="./script.js" defer></script>
 
 </head>
 <body class="h-screen flex flex-col justify-center items-center bg-black">
@@ -19,31 +18,31 @@
         <form class="bg-gray-800 px-4 py-4 rounded-lg flex flex-col items-center gap-5">
             <h2 class="text-2xl font-semibold">Password Generator</h2>
             
-            <input type="text" name="password" placeholder="click on Generate button" class="bg-gray-200 h-8 w-11/12 md:w-96 px-2 py-1 rounded-md text-sm md:text-lg text-gray-900 font-semibold outline-none">
+            <input type="text" name="password" placeholder="click on Generate button" disabled class="bg-gray-200 h-8 w-11/12 md:w-96 px-2 py-1 rounded-md text-center text-sm md:text-lg text-gray-900 font-semibold outline-none">
         
             <div class="flex gap-2 md:gap-4 max-sm:text-sm ">
-                <button type="submit" class="px-3 md:px-7 py-1 bg-purple-700 hover:bg-purple-600 transition-all ease-in-out duration-200 font-semibold rounded-md">Generate</button>
-                <button type="submit" class="px-3 md:px-7 py-1 bg-purple-700 hover:bg-purple-600 transition-all ease-in-out duration-200 font-semibold rounded-md">Copy To Clipboard</button>
+                <button type="submit" class="px-3 md:px-7 py-1 bg-purple-700 hover:bg-purple-600 transition-all ease-in-out duration-200 font-semibold rounded-md " >Generate</button>
+                <button type="" class="px-3 md:px-7 py-1 bg-purple-700 hover:bg-purple-600 transition-all ease-in-out duration-200 font-semibold rounded-md">Copy To Clipboard</button>
             </div>
 
             <div class="flex flex-col gap-1">
                 <div class="flex justify-between">
                     <label for="Password-Length" class="font-semibold text-lg">Password Length</label>
-                    <input type="number" name="Password-Length" value="12" class="rounded-lg w-2/12 text-gray-900 font-semibold text-center outline-none">
+                    <input type="number" name="Password-Length"  required value="12" class="rounded-lg w-2/12 text-gray-900 font-semibold text-center outline-none">
                 </div>
     
                 <div class="flex justify-between">
                     
                     <label for="Include-Uppercase-Letters" class="font-semibold text-lg">Include Uppercase Letters</label>
 
-                    <input type="checkbox" name="Include-Uppercase-Letters">
+                    <input type="checkbox" name="generateRandomUppercase">
                 </div>
 
                 <div class="flex justify-between">
                     
-                    <label for="Include-Uppercase-Letters" class="font-semibold text-lg">Include Lowercase Letters</label>
+                    <label for="Include-Lower-Letters" class="font-semibold text-lg">Include Lowercase Letters</label>
 
-                    <input type="checkbox" name="Include-Uppercase-Letters">
+                    <input type="checkbox" name="generateRandomLowercase">
                     
                 </div>
                 
@@ -51,7 +50,7 @@
                     
                     <label for="Include-Numbers" class="font-semibold text-lg">Include Numbers</label>
 
-                    <input type="checkbox" name="Include-Numbers">
+                    <input type="checkbox" name="generateRandomNumber">
                     
                 </div>    
 
@@ -59,7 +58,7 @@
                     
                     <label for="Include-Numbers" class="font-semibold text-lg">Include Symbols</label>
 
-                    <input type="checkbox" name="Include-Symbols">
+                    <input type="checkbox" name="generateRandomSymbol">
                     
                 </div>    
                   
