@@ -1,12 +1,17 @@
 const form = document.querySelector('form');
+// Input Element Selected For Displaying For Random Password
+const displayRandomPassoword = document.querySelector("input[name=password]");
+// Copyt To Clipboard Button
+const copyToClipboardButton = document.querySelector("[data-button='copy-to-clipboard']");
+// Array Of Special Symbols
+const specialSymbols = ['!',"\"","#","$","%","&","\'","(",")","*","+",",","-","/",":",";","<","=",">","?","@"];
+
 
 // For Generating Random Numbers Between Two Numbers
 function randomNumbersBetween(min, max)
 { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-  
-const specialSymbols = ['!',"\"","#","$","%","&","\'","(",")","*","+",",","-","/",":",";","<","=",">","?","@"];
 
 // For Generating Random UpperCase
 const generateRandomUppercase = ()=> (String.fromCharCode(randomNumbersBetween(65,90)));
@@ -27,17 +32,20 @@ form.addEventListener("submit",(e)=>
     const arrayOfGenerateRandoms = [];
     const formValues = new FormData(document.querySelector('form'),document.querySelector('button[type=submit]'));
     
+    // For Counting Numbers Of Filters
     let formLength = 0;
+    //For Storing Random Password
     let randomPassword=[];
+    // For Stroing Password Length
     let passwordLength=[];
+
     for(let data of formValues)
     {
-        console.log(data);
         if(formLength == 0){
+            // Storing Password Length
            passwordLength = parseInt(data[1]);
-        //    console.log("dd:\t\t",typeof(data[1]));
-        //    console.log("dd:\t\t",typeof(data[1]));
-        }    
+        } 
+         //Adding Filters In Array Which Are Selected By User  
         if(data[0] == 'generateRandomUppercase'){
             arrayOfGenerateRandoms.push(generateRandomUppercase);
            }
@@ -57,24 +65,45 @@ form.addEventListener("submit",(e)=>
         formLength++;     
         
     }    
+    // No Filter Is Applied
     if(formLength == 1){alert("Please Select Atleast One Filter");} 
 
-    console.log("clicked happend");
-
-
+    // Generating Random Values
     for(let count=0; count < passwordLength; count++)
     {
-        // const tempValue = arrayOfGenerateRandoms.map((generate)=> generate());
         const tempValue = arrayOfGenerateRandoms[generateRandomNumber(0,(arrayOfGenerateRandoms.length-1))]();
-
         randomPassword.push(tempValue)
-        // console.log("count:- \t",randomPassword);
     }
 
-    console.log("rp: \t",randomPassword.flat().join(""));
-    const displayRandomPassoword = document.querySelector("input[name=password]");
     displayRandomPassoword.value = randomPassword.flat().join("");
 
-console.log("\n\n\n\narf ul: ",arrayOfGenerateRandoms);
+    copyToClipboardButton.classList.remove("bg-gray-100");
+    copyToClipboardButton.classList.remove("text-gray-900");
 
+    copyToClipboardButton.classList.add('bg-gray-800');
+    copyToClipboardButton.classList.add("hover:bg-gray-700");
+    copyToClipboardButton.classList.add("text-gray-200");
+    
+});
+
+// Clipboard Event For Copying
+copyToClipboardButton.addEventListener("click",()=>{
+
+    navigator.clipboard.writeText(displayRandomPassoword.value).then(
+        () => {
+          /* clipboard successfully set */
+        //   console.log("clipboard successfully set");
+          copyToClipboardButton.classList.remove("bg-gray-800");
+          copyToClipboardButton.classList.remove("hover:bg-gray-700");
+          copyToClipboardButton.classList.remove("text-gray-200");
+ 
+          
+          copyToClipboardButton.classList.add("bg-gray-100");          
+          copyToClipboardButton.classList.add("text-gray-900");
+        },
+        () => {
+          /* clipboard write failed */
+          alert("clipboard write failed");
+        },
+      );
 });
