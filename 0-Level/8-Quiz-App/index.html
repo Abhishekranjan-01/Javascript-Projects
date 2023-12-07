@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz-App</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-orange-500 flex justify-center py-4 font-['Poppins','sans-serif']">
+    <form action="" method="get" class=" bg-gray-200 md:w-3/4 rounded-md">
+        
+        <div class="bg-gray-800 px-4 ">
+            <h1 class="text-center text-4xl font-semibold text-gray-200"> Quiz App</h1>
+        </div>
+
+        <div class="flex justify-between px-4 bg-gray-800 text-gray-200">
+            <h3>Question <span id="CurrentQuestionCount"> 1/</span><span data-questions="Total Availabel Questions">10</span></h3>
+
+            <h3>Score: <span id="ScoreCount">0</span></h3>
+        </div>
+
+
+        <div class="bg-gray-200 my-2 px-4 ">
+            <div>
+                <h2 id="qustion" class="font-semibold">What is 2+2 ?</h2>
+            </div>
+        </div>
+        
+
+        <div data-option="answer-options" class="flex flex-col pb-4">
+
+            <ul class="flex flex-col gap-2 px-4 pb-2 cursor-pointer">
+
+                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">Lorem ipsum dolor sit amet.</li>
+                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">Lorem ipsum dolor sit.</li>
+                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">Lorem, ipsum.</li>
+                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+
+            </ul>
+
+            <button type="submit" class="mx-auto bg-gray-800 rounded-md text-gray-200 px-4 mt-4">Next</button>
+
+        </div>
+
+    </form>
+
+</body>
+</html>
