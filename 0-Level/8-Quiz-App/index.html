@@ -6,12 +6,18 @@
     <title>Quiz-App</title>
     <link rel="stylesheet" href="./style.css">
 
+    <!-- <script type="module" src="./q-2.js" defer></script> -->
+    <script src="./script.js" defer></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
 </head>
 <body class="bg-orange-500 flex justify-center py-4 font-['Poppins','sans-serif']">
+
+    <div class="bg-red-600 bg-lime-500 hidden"></div>
+
     <form action="" method="get" class=" bg-gray-200 md:w-3/4 rounded-md">
         
         <div class="bg-gray-800 px-4 ">
@@ -36,10 +42,31 @@
 
             <ul class="flex flex-col gap-2 px-4 pb-2 cursor-pointer">
 
-                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">Lorem ipsum dolor sit amet.</li>
-                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">Lorem ipsum dolor sit.</li>
-                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">Lorem, ipsum.</li>
-                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">
+                    <input class="opacity-0" type="checkbox" name="1" >
+                    Lorem ipsum dolor sit amet. 1
+                    
+                </li>
+                
+                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">
+                    <input class="opacity-0" type="checkbox" name="2" >
+                    Lorem ipsum dolor sit. 2
+                </li>
+
+                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">
+                    <input class="opacity-0" type="checkbox" name="10" >    
+                    Lorem, ipsum. 10
+                </li>
+                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">
+                    <input class="opacity-0" type="checkbox" name="3" >
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 3
+                </li>
+                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">
+                    <input class="opacity-0" type="checkbox" name="4" >
+                    Lorem. 4
+                </li>
+
+                
 
             </ul>
 
