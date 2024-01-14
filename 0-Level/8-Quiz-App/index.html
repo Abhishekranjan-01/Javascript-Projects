@@ -6,71 +6,82 @@
     <title>Quiz-App</title>
     <link rel="stylesheet" href="./style.css">
 
-    <!-- <script type="module" src="./q-2.js" defer></script> -->
     <script src="./script.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
 </head>
+
 <body class="bg-orange-500 flex justify-center py-4 font-['Poppins','sans-serif']">
 
     <div class="bg-red-600 bg-lime-500 hidden"></div>
 
-    <form action="" method="get" class=" bg-gray-200 md:w-3/4 rounded-md">
+    <!-- Question And Options Form -->
+
+    <form action="" method="get" class=" bg-gray-200 md:w-3/4 rounded-md ">
         
-        <div class="bg-gray-800 px-4 ">
+        <!-- Timer -->
+        <div class="bg-gray-800 px-4 pt-2 rounded-t-md">
             <h1 class="text-center text-4xl font-semibold text-gray-200"> Quiz App</h1>
         </div>
 
+        <!-- Question Counter And Score -->
         <div class="flex justify-between px-4 bg-gray-800 text-gray-200">
-            <h3>Question <span id="CurrentQuestionCount"> 1/</span><span data-questions="Total Availabel Questions">10</span></h3>
+            
+            <h3>
+                Question: &ensp; 
+                <span id="CurrentQuestionCount"> 1/</span>
+                <span data-questions="Total Availabel Questions">10</span>
+            </h3>
 
+            <!-- Score Counter -->
             <h3>Score: <span id="ScoreCount">0</span></h3>
         </div>
 
-
-        <div class="bg-gray-200 my-2 px-4 ">
+        <!-- Question's -div -->
+        <div class="bg-gray-200 my-2 px-4 " data-question_count="question_count-1">
             <div>
-                <h2 id="qustion" class="font-semibold">What is 2+2 ?</h2>
+                <h2 id="qustion" class="font-semibold">Which is not a feature of OOP in general definitions?</h2>
             </div>
         </div>
         
-
+        <!-- Options-list -->
         <div data-option="answer-options" class="flex flex-col pb-4">
 
-            <ul class="flex flex-col gap-2 px-4 pb-2 cursor-pointer">
+            <ul  class="list-[upper-alpha] flex flex-col gap-2 px-4 pb-2 cursor-pointer relative left-4">
 
-                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">
-                    <input class="opacity-0" type="checkbox" name="1" >
-                    Lorem ipsum dolor sit amet. 1
+                <!-- Option-A -->
+                <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out" data-question_count="q_1">
+     
+                    Efficient Code
                     
                 </li>
                 
-                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">
-                    <input class="opacity-0" type="checkbox" name="2" >
-                    Lorem ipsum dolor sit. 2
+                <!-- Option-B -->
+                <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out" data-question_count="q_1">
+
+                    Code Reusability
                 </li>
 
-                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">
-                    <input class="opacity-0" type="checkbox" name="10" >    
-                    Lorem, ipsum. 10
-                </li>
-                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">
-                    <input class="opacity-0" type="checkbox" name="3" >
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 3
-                </li>
-                <li class="border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out">
-                    <input class="opacity-0" type="checkbox" name="4" >
-                    Lorem. 4
+                <!-- Option-C -->
+                <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out" data-question_count="q_1">
+    
+                    Modularity
                 </li>
 
-                
+                <!-- Option-D -->
+                <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out" data-question_count="q_1" onclick="questionOne();">
+
+                    Duplicate/Redundant data
+                </li>
+             
 
             </ul>
 
-            <button type="submit" class="mx-auto bg-gray-800 rounded-md text-gray-200 px-4 mt-4">Next</button>
+            <!-- Next Button -->
+            <button type="submit" class="mx-auto bg-gray-800 rounded-md text-lg text-gray-200 px-4 mt-4">Next</button>
 
         </div>
 
