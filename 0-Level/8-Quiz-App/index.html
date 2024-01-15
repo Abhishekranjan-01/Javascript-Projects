@@ -6,7 +6,11 @@
     <title>Quiz-App</title>
     <link rel="stylesheet" href="./style.css">
 
-    <script src="./script.js" defer></script>
+    <!-- Questions -->
+    <script src="./checkAnswers.js" defer></script>
+    
+    <!-- Main Scritpt -->
+    <script src="questions.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +24,7 @@
 
     <!-- Question And Options Form -->
 
-    <form action="" method="get" class=" bg-gray-200 md:w-3/4 rounded-md ">
+    <form action="" method="get" class="flex flex-col pb-3 bg-gray-200 md:w-3/4 rounded-md ">
         
         <!-- Timer -->
         <div class="bg-gray-800 px-4 pt-2 rounded-t-md">
@@ -40,51 +44,55 @@
             <h3>Score: <span id="ScoreCount">0</span></h3>
         </div>
 
-        <!-- Question's -div -->
-        <div class="bg-gray-200 my-2 px-4 " data-question_count="question_count-1">
-            <div>
-                <h2 id="qustion" class="font-semibold">Which is not a feature of OOP in general definitions?</h2>
+        <!-- Questions and Options's -div -->
+        <div data-container="Container For Questions And Options">
+            
+            <div class="bg-gray-200 my-2 px-4 " data-question_count="question_count-1">
+                <div>
+                    <h2 id="qustion" class="font-semibold">Which feature of OOP reduces the use of nested classes ?</h2>
+                </div>
             </div>
-        </div>
         
         <!-- Options-list -->
-        <div data-option="answer-options" class="flex flex-col pb-4">
+            <div data-option="answer-options" class="flex flex-col pb-4">
 
-            <ul  class="list-[upper-alpha] flex flex-col gap-2 px-4 pb-2 cursor-pointer relative left-4">
+                <ul data-questions="Options_for_Q-1" class="list-[upper-alpha] flex flex-col gap-2 px-4 pb-2 cursor-pointer relative left-4">
 
-                <!-- Option-A -->
-                <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out" data-question_count="q_1">
+                    <!-- Option-A -->
+                    <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out" data-question_count="q_1" onclick="questionOne(event);">
      
-                    Efficient Code
+                    Abstraction
                     
-                </li>
+                    </li>
                 
-                <!-- Option-B -->
-                <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out" data-question_count="q_1">
+                    <!-- Option-B -->
+                    <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out" data-question_count="q_1" onclick="questionOne(event);">
 
-                    Code Reusability
-                </li>
+                    Binding
+                    </li>
 
-                <!-- Option-C -->
-                <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out" data-question_count="q_1">
+                    <!-- Option-C -->
+                    <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out" data-question_count="q_1" onclick="questionOne(event);">
     
-                    Modularity
-                </li>
+                    Inheritance
+                    </li>
 
-                <!-- Option-D -->
-                <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out" data-question_count="q_1" onclick="questionOne();">
+                    <!-- Option-D -->
+                    <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out" data-question_count="q_1" onclick="questionOne(event);">
 
-                    Duplicate/Redundant data
-                </li>
+                    Encapsulation
+                    </li>
              
 
-            </ul>
+                </ul>
 
-            <!-- Next Button -->
-            <button type="submit" class="mx-auto bg-gray-800 rounded-md text-lg text-gray-200 px-4 mt-4">Next</button>
-
+            </div>
         </div>
 
+        
+
+        <!-- Next Button -->
+        <button type="submit" class="self-center mx-auto bg-gray-800 rounded-md text-lg text-gray-200 px-4 ">Next</button>
     </form>
 
 </body>
