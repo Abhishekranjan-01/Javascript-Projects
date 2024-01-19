@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz-App</title>
     <link rel="stylesheet" href="./style.css">
-    
-    <!-- Main Scritpt -->
-    <script type="module" src="./script.js" defer></script>
 
+     <!-- For Obtaining Questions -->
+    <script type="module" src="./scripts/questions.js" defer></script>
+    
+    
     <!-- For Checking Answers -->
-    <script src="./checkAnswers.js" defer></script>
+    <script type="module" src="./scripts/checkAnswers.js" defer></script>
+
+     <!-- Main Scritpt -->
+     <script type="module" src="./scripts/script.js" defer></script>
+
+    <!-- Options Click Events -->
+    <script type="module" src="./scripts/optionsClickEvents.js"></script>
+
+   
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,15 +30,17 @@
 
 <body class="bg-orange-500 flex justify-center py-4 font-['Poppins','sans-serif']">
 
-    <div class="bg-red-600 bg-lime-500 hidden"></div>
+    <div class="bg-red-600 bg-lime-500 hidden pointer-events-none"></div>
 
     <!-- Question And Options Form -->
 
-    <form action="" method="get" class="flex flex-col pb-3 bg-gray-200 md:w-3/4 rounded-md ">
+    <form action="" method="" class="flex flex-col pb-3 bg-gray-200 md:w-3/4 rounded-md ">
         
         <!-- Timer -->
         <div class="bg-gray-800 px-4 pt-2 rounded-t-md">
-            <h1 class="text-center text-4xl font-semibold text-gray-200"> Quiz App</h1>
+            <h1 class="text-center text-4xl font-semibold text-gray-200">
+                <span id="timer"> 15 </span> 
+            </h1>
         </div>
 
         <!-- Question Counter And Score -->
@@ -94,8 +106,18 @@
 
         </div>
 
-        <!-- Next Button -->
-        <button name="next" class="self-center mx-auto bg-gray-800 rounded-md text-lg text-gray-200 px-4 ">Next</button>
+        <!-- Button Container -->
+        <div class="flex justify-center gap-4">
+            
+            <!-- Previous Button -->
+            <button name="prev" class="self-center bg-gray-800 rounded-md text-lg text-gray-200 px-4 ">Prev</button>
+
+            <!-- Next Button -->
+            <button name="next" class="self-center bg-gray-800 rounded-md text-lg text-gray-200 px-4 ">Next</button>
+        </div>
+        
+
+        
     </form>
 
 </body>

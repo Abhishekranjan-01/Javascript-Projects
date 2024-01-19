@@ -1,3 +1,5 @@
+import { arrayOfQuetionsAndOptions } from "./questions.js";
+
 //For Displaying Score On Form
 let scoreCount = 0; 
 const scoreCountDisplay = document.getElementById('ScoreCount'); 
@@ -39,7 +41,7 @@ function questionOne(e){
         e.target.classList.add('bg-red-600');
         //Marking Green For The Correct Answer
         questionOneOptions[2].classList.add('bg-lime-500');
-
+        
         decreaseScore();
     }
     else{
@@ -50,9 +52,9 @@ function questionOne(e){
     }
 
 
-    for(option of questionOneOptions){
+    for(let option of questionOneOptions){
         
-        option.removeAttribute("onClick");
+        option.classList.add("pointer-events-none");
 
     }
 }
@@ -79,9 +81,9 @@ function questionTwo(e){
     }
 
 
-    for(option of questionTwoOptions){
+    for(let option of questionTwoOptions){
         
-        option.removeAttribute("onClick");
+        option.classList.add("pointer-events-none");
 
     }
 }
@@ -109,9 +111,9 @@ function questionThree(e){
     }
 
     
-    for(option of questionThreeOptions){
+    for(let option of questionThreeOptions){
         
-        option.removeAttribute("onClick");
+        option.classList.add("pointer-events-none");
 
     }
 }
@@ -141,8 +143,7 @@ function questionFour(e){
     
     for(option of questionFourOptions){
         
-        option.removeAttribute("onClick");
-
+        option.classList.add("pointer-events-none");
     }
 }
 
@@ -169,9 +170,9 @@ function questionFive(e){
     }
 
     
-    for(option of questionFiveOptions){
+    for(let option of questionFiveOptions){
         
-        option.removeAttribute("onClick");
+        option.classList.add("pointer-events-none");
 
     }
 }
@@ -201,7 +202,7 @@ function questionSix(e){
     
     for(option of questionSixOptions){
         
-        option.removeAttribute("onClick");
+        option.classList.add("pointer-events-none");
 
     }
 }
@@ -231,7 +232,7 @@ function questionSeven(e){
     
     for(option of questionSevenOptions){
         
-        option.removeAttribute("onClick");
+        option.classList.add("pointer-events-none");
 
     }
 }
@@ -261,8 +262,7 @@ function questionEight(e){
     
     for(option of questionEightOptions){
         
-        option.removeAttribute("onClick");
-
+        option.classList.add("pointer-events-none");
     }
 }
 
@@ -291,15 +291,14 @@ function questionNine(e){
     
     for(option of questionNineOptions){
         
-        option.removeAttribute("onClick");
-
+        option.classList.add("pointer-events-none");
     }
 }
 
 
 function questionTen(e){
 
-    const questionNineOptions = document.querySelectorAll("[data-questions='Options_for_Q-10'] li");
+    const questionTenOptions = document.querySelectorAll("[data-questions='Options_for_Q-10'] li");
 
     // Checking for the Seclected Answer Is Right Or Not
     if(e.target.innerText !== "Access of elements in linked list takes less time than compared to arrays"){
@@ -307,23 +306,23 @@ function questionTen(e){
         // Marking Red For The Incorrect Answer
         e.target.classList.add('bg-red-600');
         //Marking Green For The Correct Answer
-        questionNineOptions[1].classList.add('bg-lime-500');
+        questionTenOptions[1].classList.add('bg-lime-500');
 
         decreaseScore();
     }
     else{
         //Marking Green If The Selected Answer Is Correct
-        questionNineOptions[1].classList.add('bg-lime-500');
+        questionTenOptions[1].classList.add('bg-lime-500');
 
         increaseScore();
     }
 
     
-    for(option of questionNineOptions){
+    for(option of questionTenOptions){
         
-        option.removeAttribute("onClick");
+        option.classList.add("pointer-events-none");
 
     }
 }
 
-// export {scoreCount};
+export {scoreCount,scoreCountDisplay,decreaseScore,increaseScore,questionOne,questionTwo,questionThree,questionFour,questionFive,questionSix,questionSeven,questionEight,questionNine,questionTen};
