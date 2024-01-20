@@ -57,6 +57,10 @@ function questionOne(e){
         option.classList.add("pointer-events-none");
 
     }
+
+    const question1 = document.querySelector("[data-container='Container For Questions And Options']");
+
+    arrayOfQuetionsAndOptions.splice(0,1,question1.innerHTML);
 }
 
 function questionTwo(e){
@@ -81,11 +85,16 @@ function questionTwo(e){
     }
 
 
+
     for(let option of questionTwoOptions){
         
         option.classList.add("pointer-events-none");
 
     }
+
+    const question2 = document.querySelector("[data-container='Container For Questions And Options']");
+
+    arrayOfQuetionsAndOptions.splice(1,1,question2.innerHTML);
 }
 
 
@@ -116,6 +125,10 @@ function questionThree(e){
         option.classList.add("pointer-events-none");
 
     }
+
+    const question3 = document.querySelector("[data-container='Container For Questions And Options']");
+
+    arrayOfQuetionsAndOptions.splice(2,1,question3.innerHTML);
 }
 
 
@@ -141,10 +154,15 @@ function questionFour(e){
     }
 
     
-    for(option of questionFourOptions){
+    for(let option of questionFourOptions){
         
         option.classList.add("pointer-events-none");
     }
+
+    
+    const question4 = document.querySelector("[data-container='Container For Questions And Options']");
+
+    arrayOfQuetionsAndOptions.splice(3,1,question4.innerHTML);
 }
 
 
@@ -175,6 +193,11 @@ function questionFive(e){
         option.classList.add("pointer-events-none");
 
     }
+
+    
+    const question5 = document.querySelector("[data-container='Container For Questions And Options']");
+
+    arrayOfQuetionsAndOptions.splice(4,1,question5.innerHTML);
 }
 
 
@@ -200,11 +223,16 @@ function questionSix(e){
     }
 
     
-    for(option of questionSixOptions){
+    for(let option of questionSixOptions){
         
         option.classList.add("pointer-events-none");
 
     }
+
+    
+    const question6 = document.querySelector("[data-container='Container For Questions And Options']");
+
+    arrayOfQuetionsAndOptions.splice(5,1,question6.innerHTML);
 }
 
 
@@ -230,11 +258,15 @@ function questionSeven(e){
     }
 
     
-    for(option of questionSevenOptions){
+    for(let option of questionSevenOptions){
         
         option.classList.add("pointer-events-none");
 
     }
+
+    const question7 = document.querySelector("[data-container='Container For Questions And Options']");
+
+    arrayOfQuetionsAndOptions.splice(6,1,question7.innerHTML);
 }
 
 
@@ -260,10 +292,14 @@ function questionEight(e){
     }
 
     
-    for(option of questionEightOptions){
+    for(let option of questionEightOptions){
         
         option.classList.add("pointer-events-none");
     }
+
+    const question8 = document.querySelector("[data-container='Container For Questions And Options']");
+
+    arrayOfQuetionsAndOptions.splice(7,1,question8.innerHTML);
 }
 
 
@@ -289,10 +325,14 @@ function questionNine(e){
     }
 
     
-    for(option of questionNineOptions){
+    for(let option of questionNineOptions){
         
         option.classList.add("pointer-events-none");
     }
+
+    const question9 = document.querySelector("[data-container='Container For Questions And Options']");
+
+    arrayOfQuetionsAndOptions.splice(8,1,question9.innerHTML);
 }
 
 
@@ -318,11 +358,15 @@ function questionTen(e){
     }
 
     
-    for(option of questionTenOptions){
+    for(let option of questionTenOptions){
         
         option.classList.add("pointer-events-none");
 
     }
+
+    const question10 = document.querySelector("[data-container='Container For Questions And Options']");
+
+    arrayOfQuetionsAndOptions.splice(9,1,question10.innerHTML);
 }
 
-export {scoreCount,scoreCountDisplay,decreaseScore,increaseScore,questionOne,questionTwo,questionThree,questionFour,questionFive,questionSix,questionSeven,questionEight,questionNine,questionTen};
+export {questionOne,questionTwo,questionThree,questionFour,questionFive,questionSix,questionSeven,questionEight,questionNine,questionTen};

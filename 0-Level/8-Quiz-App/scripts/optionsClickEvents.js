@@ -1,5 +1,4 @@
-import {scoreCount,scoreCountDisplay,decreaseScore,increaseScore,questionOne,questionTwo,questionThree,questionFour,questionFive,questionSix,questionSeven,questionEight,questionNine,questionTen} from "./checkAnswers.js";
-
+import {questionOne,questionTwo,questionThree,questionFour,questionFive,questionSix,questionSeven,questionEight,questionNine,questionTen} from "./checkAnswers.js";
 
 function addEventsInQuestionOne(){
     const QuestionOneOptions = document.querySelectorAll("[data-container='Container For Questions And Options'] li");
@@ -12,11 +11,8 @@ function addEventsInQuestionOne(){
 
 function addEventsInQuestionTwo(){
 
-
-
     const QuestionTwoOptions = document.querySelectorAll("[data-questions='Options_for_Q-2'] li");
 
-    console.log(QuestionTwoOptions);
 
     for(let option of QuestionTwoOptions)
     {

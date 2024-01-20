@@ -7,34 +7,35 @@
     <link rel="stylesheet" href="./style.css">
 
      <!-- For Obtaining Questions -->
-    <script type="module" src="./scripts/questions.js" defer></script>
+    <!-- <script type="module" src="./scripts/questions.js" defer></script> -->
     
     
     <!-- For Checking Answers -->
-    <script type="module" src="./scripts/checkAnswers.js" defer></script>
-
-     <!-- Main Scritpt -->
-     <script type="module" src="./scripts/script.js" defer></script>
+    <!-- <script type="module" src="./scripts/checkAnswers.js" defer></script> -->
 
     <!-- Options Click Events -->
-    <script type="module" src="./scripts/optionsClickEvents.js"></script>
+    <!-- <script type="module" src="./scripts/optionsClickEvents.js" defer></script> -->
+    
+    <!-- Main Scritpt -->
+    <script type="module" src="./scripts/script.js" defer></script>
 
-   
-
-
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
 </head>
 
-<body class="bg-orange-500 flex justify-center py-4 font-['Poppins','sans-serif']">
+<body class=" bg-[url('https://images.pexels.com/photos/7092540/pexels-photo-7092540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] sm:bg-[url('https://images.pexels.com/photos/11986168/pexels-photo-11986168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] flex justify-center py-4 font-['Poppins','sans-serif'] bg-cover bg-no-repeat">
 
     <div class="bg-red-600 bg-lime-500 hidden pointer-events-none"></div>
 
     <!-- Question And Options Form -->
 
-    <form action="" method="" class="flex flex-col pb-3 bg-gray-200 md:w-3/4 rounded-md ">
+    <form action="" method="" class="max-sm:mx-4 shadow-2xl flex flex-col pb-3 bg-gray-200 md:w-3/4 rounded-md ">
         
         <!-- Timer -->
         <div class="bg-gray-800 px-4 pt-2 rounded-t-md">
@@ -74,7 +75,7 @@
                     <ul data-questions="Options_for_Q-1" class="list-[upper-alpha] flex flex-col gap-2 px-4 pb-2 cursor-pointer relative left-4">
 
                         <!-- Option-A -->
-                        <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:bg-zinc-800 hover:text-gray-200 transition-all duration-200 ease-in-out" data-question_count="q_1" onclick="questionOne(event);">
+                        <li class="w-[99%] border-gray-400 border rounded-lg p-1 hover:border-zinc-800 hover:border-4 transition-all duration-200 ease-in-out" data-question_count="q_1" onclick="questionOne(event);">
      
                         Abstraction
                     
@@ -107,10 +108,13 @@
         </div>
 
         <!-- Button Container -->
-        <div class="flex justify-center gap-4">
+        <div class="flex px-4 justify-between md:justify-evenly md:px-0">
             
             <!-- Previous Button -->
             <button name="prev" class="self-center bg-gray-800 rounded-md text-lg text-gray-200 px-4 ">Prev</button>
+
+            <!-- Reset Button -->
+            <button type="submit" name="submit" class="self-center bg-gray-800 rounded-md text-lg text-gray-200 px-4 ">Reset</button>
 
             <!-- Next Button -->
             <button name="next" class="self-center bg-gray-800 rounded-md text-lg text-gray-200 px-4 ">Next</button>
@@ -119,6 +123,24 @@
 
         
     </form>
+
+
+    <!-- Contact Section -->
+    <footer class="absolute bottom-0">
+        <!-- <div class="flex flex-col justify-center items-center"> -->
+            <h1 class="text-gray-900 font-bold text-sm">For Any Query/Information</h1>
+        <!-- </div> -->
+
+        <div class="flex justify-center gap-5 py-1">
+            <a href="https://www.linkedin.com/in/abhishek-ranjan-791b6b22a/" target="_blank">
+                <i class="fa-brands fa-linkedin fa-xl text-gray-950 text-center cursor-pointer"></i>
+            </a>
+            
+            <a href="https://github.com/Abhishekranjan-01" target="_blank">
+                <i class="fa-brands fa-github fa-xl text-gray-950"></i>
+            </a>
+        </div>
+    </footer>
 
 </body>
 </html>
