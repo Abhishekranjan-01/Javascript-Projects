@@ -4,12 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Emoji</title>
+
+    <style>
+      .emoji {
+        transition: all ease-in-out;
+        transition-duration: 0.5s;
+        font-size: 180px;
+        width: fit-content;
+        height: fit-content;
+        margin: 50px auto;
+
+        filter: grayscale(1);
+      }
+
+      .emoji:hover {
+        transform: scale(1.5) rotate(45deg);
+        filter: grayscale(0);
+      }
+    </style>
+    <script src="./scirpt.js" defer></script>
   </head>
   <body>
-    <p>
-      Some Thing
-      <span style="font-size: 100px; background-color: yellow">&#9786;</span>
-      <span style="font-size: 100px">&#\uF62D;</span>
-    </p>
+    <h1 style="text-align: center; font-family: Arial, Helvetica, sans-serif">
+      Hover On Emoji To Get Random Emoji &#x1F600; !
+    </h1>
+    <!-- Default Emoji -->
+    <div class="emoji">&#x1F600;</div>
   </body>
 </html>
