@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Editor</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #201e1e;
+        color: #efef;
+        font-size: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <section
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+      "
+    >
+      <h1 style="text-align: center">Type In Your Words</h1>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 50%;
+          gap: 50px;
+        "
+      >
+        <input
+          type="text"
+          placeholder="Type Your Text Here"
+          style="
+            padding: 4px 8px;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            width: 100%;
+          "
+        />
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            font-size: 16px;
+          "
+        >
+          <div
+            style="
+              border: solid 4px #efef;
+              padding: 4px 8px;
+              border-radius: 12px;
+              background-color: #000;
+              cursor: pointer;
+            "
+          >
+            ABC
+          </div>
+          <div
+            style="
+              border: solid 4px #efef;
+              padding: 4px 8px;
+              border-radius: 12px;
+              background-color: #000;
+              cursor: pointer;
+            "
+          >
+            abc
+          </div>
+          <div
+            style="
+              border: solid 4px #efef;
+              padding: 4px 8px;
+              border-radius: 12px;
+              background-color: #000;
+              cursor: pointer;
+            "
+          >
+            Abc
+          </div>
+          <div
+            style="
+              border: solid 4px #efef;
+              padding: 4px 8px;
+              border-radius: 12px;
+              background-color: #000;
+              cursor: pointer;
+            "
+          >
+            B
+          </div>
+          <div
+            style="
+              border: solid 4px #efef;
+              padding: 4px 8px;
+              border-radius: 12px;
+              background-color: #000;
+              cursor: pointer;
+            "
+          >
+            <u>ABC</u>
+          </div>
+        </div>
+      </div>
+      <input
+        type="text"
+        readonly
+        value="Output"
+        style="
+          outline: none;
+          width: 40%;
+          padding: 8px 16px;
+          border: none;
+          border-radius: 8px;
+          font-size: 20px;
+          font-weight: 600;
+          text-align: center;
+        "
+      />
+    </section>
+  </body>
+</html>
