@@ -10,6 +10,25 @@
         margin: 0;
         padding: 0;
       }
+      .liStyle {
+        min-width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: #222222;
+        background-color: #c2c2c2;
+        padding: 4px 8px;
+        border: 1px solid #696969;
+        border-radius: 8px;
+      }
+      .spanStyle {
+        cursor: pointer;
+        font-weight: bold;
+        position: relative;
+        left: 5px;
+        font-size: 20px;
+        color: #ff0000;
+      }
       body {
         font-family: Arial, Helvetica, sans-serif;
         background: #c31432; /* fallback for old browsers */
@@ -27,6 +46,7 @@
         min-height: 99vh;
       }
     </style>
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <form
@@ -124,6 +144,7 @@
             border: none;
             border-radius: 12px;
             font-size: 18px;
+            cursor: pointer;
           "
         >
           Add Book
@@ -136,6 +157,7 @@
         margin: 50px 0;
         display: flex;
         flex-direction: column;
+        gap: 1px;
         align-items: center;
         font-size: 18px;
         list-style: none;
@@ -157,9 +179,12 @@
         <h4>Year</h4>
       </li>
       <li style="width: 80%; display: flex; justify-content: space-between">
-        <!-- <h4>Lorem ipsum dolor sit amet.</h4> -->
-        <!-- <h4>Author</h4> -->
-        <!-- <h4>Year</h4> -->
+        <!-- <h4>Lorem ipsum dolor sit amet.</h4>
+        <h4>Author</h4>
+        <h4>
+          Year
+          <span class="spanStyle">X</span> -->
+        </h4>
       </li>
     </ul>
   </body>
